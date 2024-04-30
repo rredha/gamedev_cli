@@ -2,16 +2,19 @@
 
 
 using angrybird_logic.ConsoleInterface;
-using angrybird_logic.Action;
-using Action = angrybird_logic.Action.Action;
+using angrybird_logic.GAction;
 
 var cli = new ConsoleInterface();
 
 cli.Print("Angry Bird CLI testing");
 cli.Print("Select Projectiles");
 
-var pick = new Action();
-var shoot = new Action();
-var aim = new Action();
+var pick = new GAction("pick", true);
+var aim = new GAction("aim", true);
+var shoot = new GAction("shoot", false);
 
-//CreateAction("pick");
+pick.PrintSelectableItem();
+aim.PrintSelectableItem();
+shoot.PrintSelectableItem();
+
+pick.GActionDoes();
