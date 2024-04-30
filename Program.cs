@@ -7,9 +7,20 @@ var cli = new ConsoleInterface();
 cli.Print("Angry Bird CLI testing");
 cli.Print("Select Projectiles");
 
-var bird = new Bird();
-bird.Cli = cli;
+var bird = new Bird
+{
+    Cli = cli
+};
 
+var rock = new Rock
+{
+    Cli = cli
+};
+
+var bomb = new Bomb
+{
+    Cli = cli
+};
 var pick  = new GameAction("pick", true);
 var aim   = new GameAction("aim", true);
 var shoot = new GameAction("shoot", false);
@@ -21,3 +32,5 @@ shoot.PrintSelectableGameAction();
 pick.GameActionDoes();
 
 bird.IsDoingWhileShooting();
+bomb.IsDoingWhileShooting();
+rock.IsDoingWhileShooting();
