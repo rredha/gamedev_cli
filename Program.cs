@@ -1,20 +1,23 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-
-using angrybird_logic.ConsoleInterface;
+﻿using angrybird_logic.ConsoleInterface;
 using angrybird_logic.GAction;
+using angrybird_logic.Units;
 
 var cli = new ConsoleInterface();
 
 cli.Print("Angry Bird CLI testing");
 cli.Print("Select Projectiles");
 
-var pick = new GAction("pick", true);
-var aim = new GAction("aim", true);
-var shoot = new GAction("shoot", false);
+var bird = new Bird();
+bird.Cli = cli;
 
-pick.PrintSelectableItem();
-aim.PrintSelectableItem();
-shoot.PrintSelectableItem();
+var pick  = new GameAction("pick", true);
+var aim   = new GameAction("aim", true);
+var shoot = new GameAction("shoot", false);
 
-pick.GActionDoes();
+pick.PrintSelectableGameAction();
+aim.PrintSelectableGameAction();
+shoot.PrintSelectableGameAction();
+
+pick.GameActionDoes();
+
+bird.IsDoingWhileShooting();

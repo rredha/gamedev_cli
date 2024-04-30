@@ -1,7 +1,7 @@
 namespace angrybird_logic.GAction;
 
-public interface ISelectableItem
+public interface ISelectableGameAction
 {
-    bool IsSelectableItem();
-    void PrintSelectableItem();
+    bool IsSelectableGameAction();
+    void PrintSelectableGameAction();
 }
