@@ -5,8 +5,24 @@ using angrybird_logic.Units;
 var cli = new ConsoleInterface();
 
 cli.Print("Angry Bird CLI testing");
-cli.Print("Select Projectiles");
+cli.Print("Select Action");
 
+
+var pick  = new GameAction("pick", true);
+var aim   = new GameAction("aim", true);
+var shoot = new GameAction("shoot", true);
+
+pick.PrintSelectableGameAction();
+aim.PrintSelectableGameAction();
+shoot.PrintSelectableGameAction();
+
+switch (cli.UserInput) 
+{
+    case == pick.ToString();
+        
+    
+}
+/*
 var bird = new Bird
 {
     Cli = cli
@@ -40,14 +56,6 @@ var prisoner = new Prisonner
     IsFree = true
 };
 
-var pick  = new GameAction("pick", true);
-var aim   = new GameAction("aim", true);
-var shoot = new GameAction("shoot", false);
-
-pick.PrintSelectableGameAction();
-aim.PrintSelectableGameAction();
-shoot.PrintSelectableGameAction();
-
 pick.GameActionDoes();
 
 bird.IsDoingWhileShooting();
@@ -58,3 +66,4 @@ wall.IsDoingWhenHit();
 pig.IsDoingWhenHit();
 
 prisoner.WhatAreYouDoing();
+*/

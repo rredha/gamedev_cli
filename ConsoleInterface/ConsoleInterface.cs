@@ -7,14 +7,5 @@ public class ConsoleInterface
         Console.WriteLine(str);
     }
 
-
-
-    
-    
-    public string GetOption()
-    {
-        return "Hello";
-    }
-    
-    
+    public string? UserInput => Console.ReadLine();
 }
