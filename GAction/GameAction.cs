@@ -11,16 +11,12 @@ namespace angrybird_logic.GAction
         public string Name { get; set; }
         public bool IsSelectable { get; set; } 
 
-        public GameAction(string name)
-        {
-            this.Name = name;
-        }
 
-       public void PrintSelectableGameAction()
+       public void PrintSelectableGameAction(string str)
         {
             if (IsSelectable)
             {
-                _cli.Print(Name);
+                _cli.Print(str);
             }
         }
 

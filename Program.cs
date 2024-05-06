@@ -9,22 +9,24 @@ cli.Print("Angry Bird CLI testing");
 cli.Print("Select Action");
 
 
-var pick  = new GameAction("pick");
-var aim   = new GameAction("aim");
-var shoot = new GameAction("shoot");
+List<GameAction> selectableItems = new List<GameAction>();
+var pick  = new GameAction();
+var aim   = new GameAction();
+var shoot = new GameAction();
 
-pick.IsSelectable = true;
-aim.IsSelectable = true;
-shoot.IsSelectable = true;
+selectableItems.Add(pick);
+selectableItems.Add(aim);
+selectableItems.Add(shoot);
 
-pick.PrintSelectableGameAction();
-aim.PrintSelectableGameAction();
-shoot.PrintSelectableGameAction();
+foreach (var gameAction in selectableItems)
+{
+    gameAction.IsSelectable = true;
+    gameAction.PrintSelectableGameAction(gameAction.Name);
+}
 
 var myUserInput = cli.UserInput;
-cli.Print(myUserInput);
 
-GameAction selectedGameAction = new GameAction(""); 
+var selectedGameAction = new GameAction(); 
 GameAction GetCurrentInput(string input) => input switch
 {
     "pick" => selectedGameAction = pick,
@@ -32,7 +34,9 @@ GameAction GetCurrentInput(string input) => input switch
     "shoot" => selectedGameAction = shoot,
     _ => throw new ArgumentOutOfRangeException("not valid"),
 };
-cli.Print(GetCurrentInput(myUserInput).Name);
+
+GetCurrentInput(myUserInput);
+selectedGameAction.PrintSelectableGameAction(selectedGameAction.Name);
 /*
 void SelectGameAction(string userInput) => userInput = cli.UserInput switch
 {
