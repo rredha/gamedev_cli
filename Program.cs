@@ -1,4 +1,5 @@
-﻿using angrybird_logic.ConsoleInterface;
+﻿using System.IO.Pipes;
+using angrybird_logic.ConsoleInterface;
 using angrybird_logic.GAction;
 using angrybird_logic.Units;
 
@@ -8,20 +9,38 @@ cli.Print("Angry Bird CLI testing");
 cli.Print("Select Action");
 
 
-var pick  = new GameAction("pick", true);
-var aim   = new GameAction("aim", true);
-var shoot = new GameAction("shoot", true);
+var pick  = new GameAction("pick");
+var aim   = new GameAction("aim");
+var shoot = new GameAction("shoot");
+
+pick.IsSelectable = true;
+aim.IsSelectable = true;
+shoot.IsSelectable = true;
 
 pick.PrintSelectableGameAction();
 aim.PrintSelectableGameAction();
 shoot.PrintSelectableGameAction();
 
-switch (cli.UserInput) 
+var myUserInput = cli.UserInput;
+cli.Print(myUserInput);
+
+GameAction selectedGameAction = new GameAction(""); 
+GameAction GetCurrentInput(string input) => input switch
 {
-    case == pick.ToString();
-        
-    
-}
+    "pick" => selectedGameAction = pick,
+    "aim" => selectedGameAction = aim,
+    "shoot" => selectedGameAction = shoot,
+    _ => throw new ArgumentOutOfRangeException("not valid"),
+};
+cli.Print(GetCurrentInput(myUserInput).Name);
+/*
+void SelectGameAction(string userInput) => userInput = cli.UserInput switch
+{
+
+    _ => throw new ArgumentOutOfRangeException()
+};
+
+*/
 /*
 var bird = new Bird
 {

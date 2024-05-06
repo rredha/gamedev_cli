@@ -4,36 +4,26 @@ namespace angrybird_logic.GAction
 {
     using angrybird_logic.ConsoleInterface;
 
-    public class GameAction : ISelectableGameAction
+    public class GameAction  
     {
         ConsoleInterface _cli = new ConsoleInterface();
 
-        private string _name;
-        private bool _isSelectableItem;
+        public string Name { get; set; }
+        public bool IsSelectable { get; set; } 
 
-        public GameAction(string name, bool isSelectableItem)
+        public GameAction(string name)
         {
-            this._name = name;
-            this._isSelectableItem = isSelectableItem;
+            this.Name = name;
         }
 
-        public void PrintSelectableGameAction()
+       public void PrintSelectableGameAction()
         {
-            if (_isSelectableItem)
+            if (IsSelectable)
             {
-                _cli.Print(_name);
+                _cli.Print(Name);
             }
         }
 
-        public bool IsSelectableGameAction()
-        {
-            return true;
-        }
-
-        public void GameActionDoes()
-        {
-           _cli.Print(_name + " is doing something"); 
-        }
-}
+    }
     
 }
