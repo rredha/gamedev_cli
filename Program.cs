@@ -10,9 +10,18 @@ cli.Print("Select Action");
 
 
 List<GameAction> selectableItems = new List<GameAction>();
-var pick  = new GameAction();
-var aim   = new GameAction();
-var shoot = new GameAction();
+var pick  = new Pick
+{
+    _cli = cli
+};
+var aim   = new Aim
+{
+    _cli = cli
+};
+var shoot = new Shoot
+{
+    _cli = cli
+};
 
 pick.Name = "pick";
 aim.Name = "aim";
@@ -41,14 +50,7 @@ GameAction GetCurrentInput(string input) => input switch
 
 selectedGameAction = GetCurrentInput(myUserInput);
 selectedGameAction.PrintSelectedGameAction(selectedGameAction.Name);
-/*
-void SelectGameAction(string userInput) => userInput = cli.UserInput switch
-{
-
-    _ => throw new ArgumentOutOfRangeException()
-};
-
-*/
+selectedGameAction.GameActionDoes();
 /*
 var bird = new Bird
 {
@@ -83,7 +85,6 @@ var prisoner = new Prisonner
     IsFree = true
 };
 
-pick.GameActionDoes();
 
 bird.IsDoingWhileShooting();
 bomb.IsDoingWhileShooting();

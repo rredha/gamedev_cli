@@ -4,7 +4,7 @@ namespace angrybird_logic.GAction
 {
     using angrybird_logic.ConsoleInterface;
 
-    public class GameAction  
+    public abstract class GameAction  
     {
         ConsoleInterface _cli = new ConsoleInterface();
         public string Name { get; set; }
@@ -25,6 +25,7 @@ namespace angrybird_logic.GAction
             }
         }
 
+        public abstract void GameActionDoes();
     }
     
 }
