@@ -14,6 +14,10 @@ var pick  = new GameAction();
 var aim   = new GameAction();
 var shoot = new GameAction();
 
+pick.Name = "pick";
+aim.Name = "aim";
+shoot.Name = "shoot";
+
 selectableItems.Add(pick);
 selectableItems.Add(aim);
 selectableItems.Add(shoot);
@@ -26,7 +30,7 @@ foreach (var gameAction in selectableItems)
 
 var myUserInput = cli.UserInput;
 
-var selectedGameAction = new GameAction(); 
+GameAction selectedGameAction; 
 GameAction GetCurrentInput(string input) => input switch
 {
     "pick" => selectedGameAction = pick,
@@ -35,8 +39,8 @@ GameAction GetCurrentInput(string input) => input switch
     _ => throw new ArgumentOutOfRangeException("not valid"),
 };
 
-GetCurrentInput(myUserInput);
-selectedGameAction.PrintSelectableGameAction(selectedGameAction.Name);
+selectedGameAction = GetCurrentInput(myUserInput);
+selectedGameAction.PrintSelectedGameAction(selectedGameAction.Name);
 /*
 void SelectGameAction(string userInput) => userInput = cli.UserInput switch
 {
