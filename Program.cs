@@ -1,4 +1,6 @@
 ﻿using System.IO.Pipes;
+using System.Runtime.CompilerServices;
+using System.Text;
 using angrybird_logic.ConsoleInterface;
 using angrybird_logic.GAction;
 using angrybird_logic.Units;
@@ -51,41 +53,8 @@ GameAction GetCurrentInput(string input) => input switch
 selectedGameAction = GetCurrentInput(myUserInput);
 selectedGameAction.PrintSelectedGameAction(selectedGameAction.Name);
 selectedGameAction.GameActionDoes();
+
 /*
-var bird = new Bird
-{
-    Cli = cli
-};
-
-var rock = new Rock
-{
-    Cli = cli
-};
-
-var bomb = new Bomb
-{
-    Cli = cli
-};
-
-var pig = new Pig
-{
-    Cli = cli,
-    isHit = true
-};
-
-var wall = new Wall
-{
-    Cli = cli,
-    isHit = false
-};
-
-var prisoner = new Prisonner
-{
-    Cli = cli,
-    IsFree = true
-};
-
-
 bird.IsDoingWhileShooting();
 bomb.IsDoingWhileShooting();
 rock.IsDoingWhileShooting();
@@ -95,3 +64,21 @@ pig.IsDoingWhenHit();
 
 prisoner.WhatAreYouDoing();
 */
+
+var projectileUnits = new List<Projectile>();
+SpawnProjectiles(3);
+cli.Print(projectileUnits.Count + " Projectiles");
+
+static T Spawn<T>() where T : new()
+{
+    return new T();
+}
+
+void SpawnProjectiles(int num)
+{
+    for (var i = 0; i < num; i++)
+    {
+        projectileUnits.Add(Spawn<Bird>()); 
+    }
+}
+return;
