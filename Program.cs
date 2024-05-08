@@ -1,8 +1,4 @@
-﻿using System.ComponentModel.Design;
-using System.IO.Pipes;
-using System.Runtime.CompilerServices;
-using System.Text;
-using angrybird_logic.ConsoleInterface;
+﻿using angrybird_logic.ConsoleInterface;
 using angrybird_logic.GAction;
 using angrybird_logic.Units;
 using angrybird_logic.StateMachine;
@@ -50,7 +46,8 @@ void PlayerPicking()
    else
    {
        state = StateMachine.State.Lost;
-       PlayerLost();
+       Lost.cli = cli;
+       Lost.PlayerLost();
    }
 }
 
@@ -68,7 +65,8 @@ void PlayerAiming()
     {
         cli.Print("Target Hit !");
         state = StateMachine.State.Won;
-        PlayerWon();
+        Won.cli = cli;
+        Won.PlayerWon();
     }
     else
     {
@@ -78,17 +76,6 @@ void PlayerAiming()
     }
 }
 
-void PlayerWon()
-{
-   cli.Print("Congratulation you won");
-   state = StateMachine.State.LevelInit;
-   lvl++;
-   LevelInit();
-}
-void PlayerLost()
-{
-    cli.Print("Shoot i lost again...");
-}
 
 void PromptSelection()
 {
