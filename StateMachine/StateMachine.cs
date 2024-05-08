@@ -8,7 +8,7 @@ public class StateMachine
         Pick,
         Aim,
         Shoot,
-        Result,
+        Won,
         Lost,
     }   
 }

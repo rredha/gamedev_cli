@@ -12,17 +12,21 @@ var cli = new ConsoleInterface();
 PromptWelcome(cli);
 var state = StateMachine.State.LevelInit;
 var lvl = 1;
-cli.Print("Level : " + lvl.ToString());
 var prisonnersUnits = new List<Prisonner>();
 var targetUnits = new List<Target>();
 var projectileUnits = new List<Projectile>();
+LevelInit();
+
+void LevelInit()
+{
+cli.Print("Level : " + lvl.ToString());
 SpawnerProjectileMechanism(cli);
 SpawnerTargetsMechanism(cli);
 SpawnerPrisonnersMechanism(cli);
 PromptSelection();
-
 state = StateMachine.State.Pick;
 PlayerPicking();
+}
 
 void PlayerPicking()
 {
@@ -36,9 +40,10 @@ void PlayerPicking()
    {
        cli.Print(projectileUnits.Count + " Projectiles Left");
        // error here, for some reason...
-       if (cli.UserInput != "sel") return;
+       cli.Print("Press S to continue");
+       if (cli.UserInput != "S") return;
        // lets say that its picked and removed it from the list
-       projectileUnits.RemoveAt(projectileUnits.Count);
+       projectileUnits.RemoveAt(projectileUnits.Count-1);
        state = StateMachine.State.Aim;
        PlayerAiming();
    }
@@ -51,9 +56,35 @@ void PlayerPicking()
 
 void PlayerAiming()
 {
-    cli.Print("I'm Freaking Aiming at something...");
+    cli.Print("Aiming...");
+    cli.Print("Press Y to continue...");
+    if (cli.UserInput != "Y")
+    {
+        PlayerAiming();
+    }
+
+    var rand = new Random().NextDouble();
+    if (rand >= 0.8)
+    {
+        cli.Print("Target Hit !");
+        state = StateMachine.State.Won;
+        PlayerWon();
+    }
+    else
+    {
+        cli.Print("You didnt hit the target");
+        state = StateMachine.State.Pick;
+        PlayerPicking();
+    }
 }
 
+void PlayerWon()
+{
+   cli.Print("Congratulation you won");
+   state = StateMachine.State.LevelInit;
+   lvl++;
+   LevelInit();
+}
 void PlayerLost()
 {
     cli.Print("Shoot i lost again...");
