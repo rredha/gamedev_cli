@@ -8,7 +8,13 @@ public class Lost
     internal static void PlayerLost()
     {
         cli.Print("Shoot i lost again...");
+        
+        cli.Print("Do You want to play again ?");
+        cli.Print("Type Y to restart.");
+        if (cli.UserInput != "Y") return;
+        
         state = StateMachine.State.LevelInit;
+        Init.Level();
     }
 
 }
