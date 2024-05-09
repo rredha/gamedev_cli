@@ -1,3 +1,5 @@
+using angrybird_logic.GAction;
+
 namespace angrybird_logic.StateMachine;
 
 public class Aiming
@@ -14,20 +16,9 @@ public class Aiming
         {
             PlayerAiming();
         }
-
-        var rand = new Random().NextDouble();
-        if (rand >= 0.8)
-        {
-            cli.Print("Target Hit !");
-            state = StateMachine.State.Won;
-            Won.cli = cli;
-            Won.PlayerWon();
-        }
-        else
-        {
-            cli.Print("You didnt hit the target");
-            state = StateMachine.State.Pick;
-            Picking.PlayerPicking();
-        }
+        
+        state = StateMachine.State.Shoot;
+        Shooting.cli = cli;
+        Shooting.PlayerShooting();
     }
 }
