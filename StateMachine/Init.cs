@@ -8,8 +8,8 @@ public class Init
     public static ConsoleInterface.ConsoleInterface? cli { get; set; }
 
     static int lvl = 1;
-    public static List<Prisonner> prisonnersUnits;
-    public static List<Target> targetUnits;
+    public static List<Prisonner> PrisonnersUnits = new List<Prisonner>();
+    public static List<Target> TargetUnits = new List<Target>();
     public static List<Projectile> ProjectileUnits = new List<Projectile>();
     internal static void Level()
     {
@@ -20,7 +20,7 @@ public class Init
         PromptSelection();
         
         state = StateMachine.State.Pick;
-        
+        Picking.cli = cli; 
         Picking.PlayerPicking();
     }
 
@@ -32,48 +32,43 @@ public class Init
         }
     }
 
-    private static T Spawn<T>() where T : new()
-    {
-        return new T();
-    }
     private static void SpawnerProjectileMechanism()
     {
         SpawnProjectiles(3);
         cli.Print(ProjectileUnits.Count + " Projectiles");
 
     }
-    static void SpawnerTargetsMechanism()
+    private static void SpawnerTargetsMechanism()
     {
         SpawnTargets(2);
-        cli.Print(targetUnits.Count + " Walls");
+        cli.Print(TargetUnits.Count + " Walls");
 
     }
-    static void SpawnTargets(int num)
+    private static void SpawnTargets(int numberOfTargets)
     {
-        for (var i = 0; i < num; i++)
+        for (var i = 0; i < numberOfTargets; i++)
         {
-            targetUnits.Add(Spawn<Wall>()); 
+            TargetUnits.Add(Spawn<Wall>()); 
         }
     }
     static void SpawnerPrisonnersMechanism()
     {
         SpawnPrsionners(1);
-        cli.Print(prisonnersUnits.Count + " Prisonner");
+        cli.Print(PrisonnersUnits.Count + " Prisonner");
 
-        static T Spawn<T>() where T : new()
-        {
-            return new T();
-        }
 
-        void SpawnPrsionners(int num)
+    }
+    static void SpawnPrsionners(int num)
+    {
+        for (var i = 0; i < num; i++)
         {
-            for (var i = 0; i < num; i++)
-            {
-                prisonnersUnits.Add(Spawn<Prisonner>()); 
-            }
+            PrisonnersUnits.Add(Spawn<Prisonner>()); 
         }
     }
-
+    private static T Spawn<T>() where T : new()
+    {
+        return new T();
+    }
 
     static void PromptSelection()
     {

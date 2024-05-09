@@ -7,20 +7,19 @@ public class Picking
     
     public static StateMachine.State state { get; set; }
     public static ConsoleInterface.ConsoleInterface? cli { get; set; }
-    
 
     internal static void PlayerPicking()
     {
-
        if (Init.ProjectileUnits.Count != 0)
        {
            cli.Print(Init.ProjectileUnits.Count + " Projectiles Left");
-           // error here, for some reason...
            cli.Print("Press S to continue");
            if (cli.UserInput != "S") return;
-           // lets say that its picked and removed it from the list
+           
            Init.ProjectileUnits.RemoveAt(Init.ProjectileUnits.Count-1);
+           
            state = StateMachine.State.Aim;
+           Aiming.cli = cli;
            Aiming.PlayerAiming();
        }
        else
