@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using View;
 
 namespace angrybird_logic.GAction
 {
@@ -6,7 +7,8 @@ namespace angrybird_logic.GAction
 
     public abstract class GameAction  
     {
-        ConsoleInterface _cli = new ConsoleInterface();
+        //ConsoleInterface _cli = new ConsoleInterface();
+        public ConsoleView _cli { get; set; }
         public string Name { get; set; }
         public bool IsSelectable { get; set; } 
 

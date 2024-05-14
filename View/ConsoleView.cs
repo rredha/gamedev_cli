@@ -1,6 +1,6 @@
-namespace angrybird_logic.ConsoleInterface;
+﻿namespace View;
 
-public class ConsoleInterface
+public class ConsoleView
 {
     public void Print(string str)
     {

@@ -1,12 +1,12 @@
 using angrybird_logic.Units;
-
+using View;
 namespace angrybird_logic.StateMachine;
 
 public class Picking
 {
     
     public static StateMachine.State state { get; set; }
-    public static ConsoleInterface.ConsoleInterface? cli { get; set; }
+    public static ConsoleView? cli { get; set; }
 
     internal static void PlayerPicking()
     {

@@ -1,11 +1,12 @@
 namespace angrybird_logic.StateMachine;
+using View;
 using angrybird_logic.GAction;
 using angrybird_logic.Units;
 
 public class Init
 {
     public static StateMachine.State state { get; set; }
-    public static ConsoleInterface.ConsoleInterface? cli { get; set; }
+    public static ConsoleView? cli { get; set; }
 
     static int lvl = 1;
     public static List<Prisonner> PrisonnersUnits = new List<Prisonner>();
@@ -73,18 +74,13 @@ public class Init
     static void PromptSelection()
     {
         List<GameAction> selectableItems = new List<GameAction>();
-        var pick  = new Pick
-        {
-            _cli = cli
-        };
-        var aim   = new Aim
-        {
-            _cli = cli
-        };
-        var shoot = new Shoot
-        {
-            _cli = cli
-        };
+        var pick = new Pick();
+        var aim = new Aim();
+        var shoot = new Shoot();
+        
+        pick._cli = cli;
+        aim._cli = cli;
+        shoot._cli = cli;
 
         pick.Name = "pick";
         aim.Name = "aim";

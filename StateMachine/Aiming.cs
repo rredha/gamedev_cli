@@ -1,4 +1,5 @@
 using angrybird_logic.GAction;
+using View;
 
 namespace angrybird_logic.StateMachine;
 
@@ -6,7 +7,7 @@ public class Aiming
 {
 
     public static StateMachine.State state { get; set; }
-    public static ConsoleInterface.ConsoleInterface? cli { get; set; }
+    public static ConsoleView? cli { get; set; }
 
     internal static void PlayerAiming()
     {

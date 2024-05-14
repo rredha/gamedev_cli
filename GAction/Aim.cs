@@ -1,8 +1,8 @@
 namespace angrybird_logic.GAction;
+using View;
 
 public class Aim : GameAction
 {
-    public ConsoleInterface.ConsoleInterface? _cli { set; get; }
 
     public override void GameActionDoes()
     {

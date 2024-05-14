@@ -1,9 +1,11 @@
+using View;
+
 namespace angrybird_logic.StateMachine;
 
 public class Won
 {
     public static StateMachine.State state { get; set; }
-    public static ConsoleInterface.ConsoleInterface? cli { get; set; }
+    public static ConsoleView? cli { get; set; }
 
     public static int lvl
     {

@@ -1,10 +1,12 @@
+using View;
+
 namespace angrybird_logic.StateMachine;
 
 public class Shooting
 {
     
     public static StateMachine.State state { get; set; }
-    public static ConsoleInterface.ConsoleInterface? cli { get; set; }
+    public static ConsoleView? cli { get; set; }
 
     internal static void PlayerShooting()
     {
