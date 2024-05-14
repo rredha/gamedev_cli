@@ -1,9 +1,11 @@
+using View;
+
 namespace angrybird_logic.Units;
-using static ConsoleInterface.ConsoleInterface;
+using View;
 
 public class Prisonner
 {
-    public ConsoleInterface.ConsoleInterface? Cli { get; set; }
+    public ConsoleView? Cli { get; set; }
     public bool IsFree;
 
     public void WhatAreYouDoing()

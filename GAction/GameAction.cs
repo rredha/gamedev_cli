@@ -3,11 +3,8 @@ using View;
 
 namespace angrybird_logic.GAction
 {
-    using angrybird_logic.ConsoleInterface;
-
     public abstract class GameAction  
     {
-        //ConsoleInterface _cli = new ConsoleInterface();
         public ConsoleView _cli { get; set; }
         public string Name { get; set; }
         public bool IsSelectable { get; set; } 

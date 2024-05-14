@@ -1,10 +1,11 @@
-namespace angrybird_logic.Units;
+using View;
 
-using static ConsoleInterface.ConsoleInterface;
+namespace angrybird_logic.Units;
+using View;
 
 public abstract class Projectile
 {
-   public ConsoleInterface.ConsoleInterface? Cli { get; set; }
+   public ConsoleView? Cli { get; set; }
    public string Name { get; set; }
 
    public abstract void IsDoingWhileShooting();

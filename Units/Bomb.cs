@@ -1,10 +1,12 @@
+using View;
+
 namespace angrybird_logic.Units;
-using ConsoleInterface;
+using View;
 
 public class Bomb : Projectile
 {
 
-    public ConsoleInterface? Cli { get; set; }
+    public ConsoleView? Cli { get; set; }
     public string Name = "Bomb";
     public override void IsDoingWhileShooting()
     {
