@@ -16,6 +16,5 @@ public class Won
        cli.Print("Congratulation you won");
        state = StateMachine.State.LevelInit;
        lvl++;
-       //LevelInit();
     }
 }
