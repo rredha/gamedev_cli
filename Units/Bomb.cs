@@ -1,5 +1,3 @@
-using View;
-
 namespace angrybird_logic.Units;
 using View;
 
