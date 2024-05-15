@@ -1,6 +1,6 @@
 using View;
-
-namespace angrybird_logic.StateMachine;
+using Utilities;
+namespace angrybird_logic.GameState;
 
 public class Won
 {

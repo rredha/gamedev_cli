@@ -1,11 +1,11 @@
-using angrybird_logic.Units;
 using View;
-namespace angrybird_logic.StateMachine;
+
+namespace angrybird_logic.GameState;
 
 public class Picking
 {
     
-    public static StateMachine.State state { get; set; }
+    public static GameStateMachine.State state { get; set; }
     public static ConsoleView? cli { get; set; }
 
     internal static void PlayerPicking()
@@ -18,13 +18,13 @@ public class Picking
            
            Init.ProjectileUnits.RemoveAt(Init.ProjectileUnits.Count-1);
            
-           state = StateMachine.State.Aim;
+           state = GameStateMachine.State.Aim;
            Aiming.cli = cli;
            Aiming.PlayerAiming();
        }
        else
        {
-           state = StateMachine.State.Lost;
+           state = GameStateMachine.State.Lost;
            Lost.cli = cli;
            Lost.PlayerLost();
        }

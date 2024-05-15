@@ -14,14 +14,17 @@
       <Compile Update="View\Program.cs">
         <Link>ConsoleView\Program.cs</Link>
       </Compile>
+      <Compile Remove="Utils\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="ConsoleInterface\Units\**" />
+      <EmbeddedResource Remove="Utils\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="ConsoleInterface\Units\**" />
+      <None Remove="Utils\**" />
     </ItemGroup>
 
 </Project>

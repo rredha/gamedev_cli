@@ -1,10 +1,11 @@
 ﻿using View;
 using angrybird_logic.GAction;
+using angrybird_logic.GameState;
 using angrybird_logic.Units;
-using angrybird_logic.StateMachine;
 
 View.ConsoleView cli = new ConsoleView(); 
-var state = StateMachine.State.LevelInit;
+var myStateMachine = new GameStateMachine();
+myStateMachine.
 Init.cli = cli;
 Init.Level();
 

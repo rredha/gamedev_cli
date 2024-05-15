@@ -1,11 +1,11 @@
 using View;
 
-namespace angrybird_logic.StateMachine;
+namespace angrybird_logic.GameState;
 
 public class Shooting
 {
     
-    public static StateMachine.State state { get; set; }
+    public static GameStateMachine.State state { get; set; }
     public static ConsoleView? cli { get; set; }
 
     internal static void PlayerShooting()
@@ -16,14 +16,14 @@ public class Shooting
         if (rand >= 0.8)
         {
             cli.Print("Target Hit !");
-            state = StateMachine.State.Won;
+            state = GameStateMachine.State.Won;
             Won.cli = cli;
             Won.PlayerWon();
         }
         else
         {
             cli.Print("You didnt hit the target");
-            state = StateMachine.State.Pick;
+            state = GameStateMachine.State.Pick;
             Picking.PlayerPicking();
         }
     }

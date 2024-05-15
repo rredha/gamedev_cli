@@ -1,11 +1,12 @@
-namespace angrybird_logic.StateMachine;
-using View;
 using angrybird_logic.GAction;
 using angrybird_logic.Units;
+using View;
+
+namespace angrybird_logic.GameState;
 
 public class Init
 {
-    public static StateMachine.State state { get; set; }
+    public static GameStateMachine.State state { get; set; }
     public static ConsoleView? cli { get; set; }
 
     static int lvl = 1;
@@ -20,7 +21,7 @@ public class Init
         SpawnerPrisonnersMechanism();
         PromptSelection();
         
-        state = StateMachine.State.Pick;
+        state = GameStateMachine.State.Pick;
         Picking.cli = cli; 
         Picking.PlayerPicking();
     }
