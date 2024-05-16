@@ -5,9 +5,11 @@ namespace angrybird_logic.GameState;
 
 public class Aiming : State
 {
+    public Aiming(StateMachine gameStateMachine) : base(gameStateMachine)
+    {
+    }
     public static ConsoleView? cli { get; set; }
 
-    public static  GameStateMachine? GameStateMachine { get; set; }
     private void PlayerAiming()
     {
         cli.Print("Aiming...");
@@ -23,6 +25,7 @@ public class Aiming : State
        PlayerAiming(); 
        
        Shooting.cli = cli;
-       GameStateMachine.SetState(new Shooting());
+       GameStateMachine.SetState(new Shooting(GameStateMachine));
     }
+
 }

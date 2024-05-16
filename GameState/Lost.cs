@@ -5,9 +5,11 @@ namespace angrybird_logic.GameState;
 
 public class Lost : State
 {
+    public Lost(StateMachine gameStateMachine) : base(gameStateMachine)
+    {
+    }
     public static ConsoleView? cli { get; set; }
 
-    public static GameStateMachine? GameStateMachine { get; set; }
     private void PlayerLost()
     {
         cli.Print("Shoot i lost again...");
@@ -17,12 +19,12 @@ public class Lost : State
         if (cli.UserInput != "Y") return;
 
         Init.cli = cli;
-        Init.gameStateMachine = GameStateMachine;
-        GameStateMachine.SetState(new Init());
+        GameStateMachine.SetState(new Init(GameStateMachine));
     }
 
     public override void Start()
     {
         PlayerLost();
     }
+
 }

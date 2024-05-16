@@ -7,12 +7,16 @@ namespace angrybird_logic.GameState;
 
 public class Init : State
 {
+    public Init(StateMachine gameStateMachine) : base(gameStateMachine)
+    {
+    }
     public static ConsoleView? cli { get; set; }
-    public static GameStateMachine? gameStateMachine { get; set; }
     static int lvl = 1;
     public static List<Prisonner> PrisonnersUnits = new List<Prisonner>();
     public static List<Target> TargetUnits = new List<Target>();
     public static List<Projectile> ProjectileUnits = new List<Projectile>();
+
+
     private void Level()
     {
         cli.Print("Level : " + lvl.ToString());
@@ -22,7 +26,7 @@ public class Init : State
         PromptSelection();
         
         Picking.cli = cli; 
-        gameStateMachine.SetState(new Picking());
+        GameStateMachine.SetState(new Picking(GameStateMachine));
     }
 
     private static void SpawnProjectiles(int numberOfProjectiles)
@@ -136,4 +140,5 @@ public class Init : State
     {
         Level();
     }
+
 }

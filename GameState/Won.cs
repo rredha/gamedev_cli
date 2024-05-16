@@ -6,7 +6,9 @@ namespace angrybird_logic.GameState;
 public class Won : State
 {
     public static ConsoleView? cli { get; set; }
-    public static GameStateMachine? GameStateMachine { get; set; }
+    public Won(StateMachine gameStateMachine) : base(gameStateMachine)
+    {
+    }
     public static int lvl
     {
         get;
@@ -17,8 +19,7 @@ public class Won : State
     {
        cli.Print("Congratulation you won");
        Init.cli = cli;
-       Init.gameStateMachine = GameStateMachine;
-       GameStateMachine.SetState(new Init());
+       GameStateMachine.SetState(new Init(GameStateMachine));
        lvl++;
     }
 
@@ -26,4 +27,5 @@ public class Won : State
     {
         PlayerWon();
     }
+
 }

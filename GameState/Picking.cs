@@ -6,8 +6,10 @@ namespace angrybird_logic.GameState;
 public class Picking : State
 {
     public static ConsoleView? cli { get; set; }
+    public Picking(StateMachine gameStateMachine) : base(gameStateMachine)
+    {
+    }
 
-    public static GameStateMachine? GameStateMachine { get; set; }
     private void PlayerPicking()
     {
        if (Init.ProjectileUnits.Count != 0)
@@ -19,14 +21,12 @@ public class Picking : State
            Init.ProjectileUnits.RemoveAt(Init.ProjectileUnits.Count-1);
            
            Aiming.cli = cli;
-           Aiming.GameStateMachine = GameStateMachine;
-           GameStateMachine.SetState(new Init());
+           GameStateMachine.SetState(new Aiming(GameStateMachine));
        }
        else
        {
            Lost.cli = cli;
-           Lost.GameStateMachine = GameStateMachine;
-           GameStateMachine.SetState(new Lost());
+           GameStateMachine.SetState(new Lost(GameStateMachine));
        }
     }
 
@@ -34,4 +34,5 @@ public class Picking : State
     {
         PlayerPicking();
     }
+
 }

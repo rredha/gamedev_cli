@@ -2,6 +2,12 @@ namespace Utils;
 
 public abstract class State
 {
-    public StateMachine? StateMachine { get;  }
+    protected StateMachine GameStateMachine;
+
+    public State(StateMachine gameStateMachine)
+    {
+        GameStateMachine = gameStateMachine;
+    }
+
     public abstract void Start();
 }
