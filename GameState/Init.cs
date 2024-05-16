@@ -9,7 +9,6 @@ public class Init : State
 {
     public static ConsoleView? cli { get; set; }
     public GameStateMachine? GameStateMachine { get; }
-
     static int lvl = 1;
     public static List<Prisonner> PrisonnersUnits = new List<Prisonner>();
     public static List<Target> TargetUnits = new List<Target>();
