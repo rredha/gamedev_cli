@@ -1,22 +1,27 @@
+using Utils;
 using View;
 
 namespace angrybird_logic.GameState;
 
-public class Lost
+public class Lost : State
 {
-    public static GameStateMachine.State state { get; set; }
     public static ConsoleView? cli { get; set; }
 
-    internal static void PlayerLost()
+    public GameStateMachine? GameStateMachine { get; }
+    private void PlayerLost()
     {
         cli.Print("Shoot i lost again...");
         
         cli.Print("Do You want to play again ?");
         cli.Print("Type Y to restart.");
         if (cli.UserInput != "Y") return;
-        
-        state = GameStateMachine.State.LevelInit;
-        Init.Level();
+
+        Init.cli = cli;
+        GameStateMachine.SetState(new Init());
     }
 
+    public override void Start()
+    {
+        PlayerLost();
+    }
 }

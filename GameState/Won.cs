@@ -1,22 +1,28 @@
 using View;
-using Utilities;
+using Utils;
+
 namespace angrybird_logic.GameState;
 
-public class Won
+public class Won : State
 {
-    public static StateMachine.State state { get; set; }
     public static ConsoleView? cli { get; set; }
-
+    public GameStateMachine? GameStateMachine { get; }
     public static int lvl
     {
         get;
         set;
     }
 
-    internal static void PlayerWon()
+    private void PlayerWon()
     {
        cli.Print("Congratulation you won");
-       state = StateMachine.State.LevelInit;
+       Init.cli = cli;
+       GameStateMachine.SetState(new Init());
        lvl++;
+    }
+
+    public override void Start()
+    {
+        PlayerWon();
     }
 }

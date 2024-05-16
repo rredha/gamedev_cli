@@ -1,19 +1,19 @@
 using angrybird_logic.GAction;
 using angrybird_logic.Units;
+using Utils;
 using View;
 
 namespace angrybird_logic.GameState;
 
-public class Init
+public class Init : State
 {
-    public static GameStateMachine.State state { get; set; }
     public static ConsoleView? cli { get; set; }
-
+    public GameStateMachine? GameStateMachine { get; }
     static int lvl = 1;
     public static List<Prisonner> PrisonnersUnits = new List<Prisonner>();
     public static List<Target> TargetUnits = new List<Target>();
     public static List<Projectile> ProjectileUnits = new List<Projectile>();
-    internal static void Level()
+    private void Level()
     {
         cli.Print("Level : " + lvl.ToString());
         SpawnerProjectileMechanism();
@@ -21,9 +21,8 @@ public class Init
         SpawnerPrisonnersMechanism();
         PromptSelection();
         
-        state = GameStateMachine.State.Pick;
+        GameStateMachine.SetState(new Picking());
         Picking.cli = cli; 
-        Picking.PlayerPicking();
     }
 
     private static void SpawnProjectiles(int numberOfProjectiles)
@@ -131,5 +130,10 @@ public class Init
         selectedGameAction = GetCurrentInput(cli.UserInput);
         selectedGameAction.PrintSelectedGameAction(selectedGameAction.Name);
         selectedGameAction.GameActionDoes();
+    }
+
+    public override void Start()
+    {
+        Level();
     }
 }

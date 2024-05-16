@@ -1,14 +1,14 @@
+using Utils;
 using View;
 
 namespace angrybird_logic.GameState;
 
-public class Aiming
+public class Aiming : State
 {
-
-    public static GameStateMachine.State state { get; set; }
     public static ConsoleView? cli { get; set; }
 
-    internal static void PlayerAiming()
+    public GameStateMachine? GameStateMachine { get; }
+    private void PlayerAiming()
     {
         cli.Print("Aiming...");
         cli.Print("Press Y to continue...");
@@ -16,9 +16,13 @@ public class Aiming
         {
             PlayerAiming();
         }
-        
-        state = GameStateMachine.State.Shoot;
-        Shooting.cli = cli;
-        Shooting.PlayerShooting();
+    }
+
+    public override void Start()
+    {
+       PlayerAiming(); 
+       
+       Shooting.cli = cli;
+       GameStateMachine.SetState(new Shooting());
     }
 }
