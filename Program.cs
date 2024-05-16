@@ -6,8 +6,9 @@ var cli = new ConsoleView();
 
 PromptWelcome(cli);
 var gameStateMachine = new GameStateMachine();
-gameStateMachine.SetState(new Init());
 Init.cli = cli;
+Init.gameStateMachine = gameStateMachine;
+gameStateMachine.SetState(new Init());
 return;
 
 void PromptWelcome(ConsoleView consoleInterface)

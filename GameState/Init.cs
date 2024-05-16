@@ -8,7 +8,7 @@ namespace angrybird_logic.GameState;
 public class Init : State
 {
     public static ConsoleView? cli { get; set; }
-    public GameStateMachine? GameStateMachine { get; }
+    public static GameStateMachine? gameStateMachine { get; set; }
     static int lvl = 1;
     public static List<Prisonner> PrisonnersUnits = new List<Prisonner>();
     public static List<Target> TargetUnits = new List<Target>();
@@ -21,8 +21,8 @@ public class Init : State
         SpawnerPrisonnersMechanism();
         PromptSelection();
         
-        GameStateMachine.SetState(new Picking());
         Picking.cli = cli; 
+        gameStateMachine.SetState(new Picking());
     }
 
     private static void SpawnProjectiles(int numberOfProjectiles)

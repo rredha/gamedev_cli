@@ -7,7 +7,7 @@ public class Lost : State
 {
     public static ConsoleView? cli { get; set; }
 
-    public GameStateMachine? GameStateMachine { get; }
+    public static GameStateMachine? GameStateMachine { get; set; }
     private void PlayerLost()
     {
         cli.Print("Shoot i lost again...");
@@ -17,6 +17,7 @@ public class Lost : State
         if (cli.UserInput != "Y") return;
 
         Init.cli = cli;
+        Init.gameStateMachine = GameStateMachine;
         GameStateMachine.SetState(new Init());
     }
 

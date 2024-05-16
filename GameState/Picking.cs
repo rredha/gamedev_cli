@@ -7,7 +7,7 @@ public class Picking : State
 {
     public static ConsoleView? cli { get; set; }
 
-    public GameStateMachine? GameStateMachine { get; }
+    public static GameStateMachine? GameStateMachine { get; set; }
     private void PlayerPicking()
     {
        if (Init.ProjectileUnits.Count != 0)
@@ -19,11 +19,13 @@ public class Picking : State
            Init.ProjectileUnits.RemoveAt(Init.ProjectileUnits.Count-1);
            
            Aiming.cli = cli;
-           GameStateMachine.SetState(new Aiming());
+           Aiming.GameStateMachine = GameStateMachine;
+           GameStateMachine.SetState(new Init());
        }
        else
        {
            Lost.cli = cli;
+           Lost.GameStateMachine = GameStateMachine;
            GameStateMachine.SetState(new Lost());
        }
     }

@@ -7,7 +7,7 @@ public class Shooting : State
 {
     public static ConsoleView? cli { get; set; }
 
-    public GameStateMachine? GameStateMachine { get; }
+    public static GameStateMachine? GameStateMachine { get; set; }
     private void PlayerShooting()
     {
         cli.Print("3...2..1. Shoot");
@@ -26,6 +26,7 @@ public class Shooting : State
         {
             cli.Print("You didnt hit the target");
             Picking.cli = cli;
+            Picking.GameStateMachine = GameStateMachine;
             GameStateMachine.SetState(new Picking());
         }
 
@@ -33,6 +34,7 @@ public class Shooting : State
         {
             cli.Print("Target Hit !");
             Won.cli = cli;
+            Won.GameStateMachine = GameStateMachine;
             GameStateMachine.SetState(new Won());
         }
     }

@@ -7,7 +7,7 @@ public class Aiming : State
 {
     public static ConsoleView? cli { get; set; }
 
-    public GameStateMachine? GameStateMachine { get; }
+    public static  GameStateMachine? GameStateMachine { get; set; }
     private void PlayerAiming()
     {
         cli.Print("Aiming...");
