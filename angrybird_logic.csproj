@@ -14,17 +14,40 @@
       <Compile Update="View\Program.cs">
         <Link>ConsoleView\Program.cs</Link>
       </Compile>
-      <Compile Remove="Utils\**" />
+      <Compile Include="Utils\State.cs" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="ConsoleInterface\Units\**" />
-      <EmbeddedResource Remove="Utils\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="ConsoleInterface\Units\**" />
-      <None Remove="Utils\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Utils\bin\Debug\net6.0\Utils.deps.json" />
+      <Content Include="Utils\bin\Debug\net6.0\Utils.dll" />
+      <Content Include="Utils\bin\Debug\net6.0\Utils.pdb" />
+      <Content Include="Utils\obj\Debug\net6.0\refint\Utils.dll" />
+      <Content Include="Utils\obj\Debug\net6.0\ref\Utils.dll" />
+      <Content Include="Utils\obj\Debug\net6.0\Utils.AssemblyInfoInputs.cache" />
+      <Content Include="Utils\obj\Debug\net6.0\Utils.assets.cache" />
+      <Content Include="Utils\obj\Debug\net6.0\Utils.csproj.AssemblyReference.cache" />
+      <Content Include="Utils\obj\Debug\net6.0\Utils.csproj.CoreCompileInputs.cache" />
+      <Content Include="Utils\obj\Debug\net6.0\Utils.csproj.FileListAbsolute.txt" />
+      <Content Include="Utils\obj\Debug\net6.0\Utils.dll" />
+      <Content Include="Utils\obj\Debug\net6.0\Utils.GeneratedMSBuildEditorConfig.editorconfig" />
+      <Content Include="Utils\obj\Debug\net6.0\Utils.pdb" />
+      <Content Include="Utils\obj\project.assets.json" />
+      <Content Include="Utils\obj\project.nuget.cache" />
+      <Content Include="Utils\obj\project.packagespec.json" />
+      <Content Include="Utils\obj\rider.project.model.nuget.info" />
+      <Content Include="Utils\obj\rider.project.restore.info" />
+      <Content Include="Utils\obj\Utils.csproj.nuget.dgspec.json" />
+      <Content Include="Utils\obj\Utils.csproj.nuget.g.props" />
+      <Content Include="Utils\obj\Utils.csproj.nuget.g.targets" />
+      <Content Include="Utils\Utils.csproj" />
     </ItemGroup>
 
 </Project>
