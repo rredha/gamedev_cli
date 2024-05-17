@@ -4,11 +4,12 @@ using angrybird_logic.GameState;
 using angrybird_logic.Units;
 
 var cli = new ConsoleView();
-var levelManager = new LevelManager();
 PromptWelcome(cli);
 
-Spawner mySpawner = new Spawner();
-
+var levelManager = new LevelManager(false);
+levelManager.Launch();
+//Spawner mySpawner = new Spawner();
+/*
 #region Spawning birds
 var birdUnits = new List<Unit>();
 birdUnits = mySpawner.SpawnAndAddToList(new Bird(), 4);
@@ -25,6 +26,8 @@ cli.Print(pigUnits.Count.ToString());
 mySpawner.UnSpawn(pigUnits);
 cli.Print(pigUnits.Count.ToString());
 #endregion
+*/
+
 /*
 var gameStateMachine = new GameStateMachine();
 Init.cli = cli;
