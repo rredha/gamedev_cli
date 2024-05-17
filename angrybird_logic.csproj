@@ -16,6 +16,8 @@
         <Link>ConsoleView\Program.cs</Link>
       </Compile>
       <Compile Remove="Utils\StateMachine\**" />
+      <Compile Remove="Units\Rock.cs" />
+      <Compile Remove="Units\Bomb.cs" />
     </ItemGroup>
 
     <ItemGroup>

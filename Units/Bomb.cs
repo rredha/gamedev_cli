@@ -1,9 +1,10 @@
 namespace angrybird_logic.Units;
 using View;
 
-public class Bomb : Projectile
+public class Bomb : Units
 {
 
+   /* 
     public ConsoleView? Cli { get; set; }
     public string Name = "Bomb";
     public override void IsDoingWhileShooting()
@@ -15,4 +16,5 @@ public class Bomb : Projectile
         Cli.Print("Pshhhh Boom !");
         
     }
+    */
 }

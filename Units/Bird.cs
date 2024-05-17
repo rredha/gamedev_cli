@@ -1,18 +1,24 @@
 namespace angrybird_logic.Units;
 using View;
 
-public class Bird : Projectile
+public class Bird : Unit, IProjectile, ISelectable
 {
 
-    public ConsoleView? Cli { get; set; }
+    public ConsoleView? cli { get; set; }
 
-    public override void IsDoingWhileShooting()
+    public void IsDoingWhileShooting()
     {
-        if (Cli == null)
-        {
-            return;
-        }
-        Cli.Print("Bird is flying");
-        
+        cli.Print("Bird is flying");
+    }
+
+    public bool IsSelectable()
+    {
+        return true;
+    }
+
+    public bool IsSelected(int randomValue)
+    {
+        const int threshold = 50;
+        return randomValue >= threshold;
     }
 }

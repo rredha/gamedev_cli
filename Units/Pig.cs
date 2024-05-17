@@ -1,13 +1,24 @@
 namespace angrybird_logic.Units;
 
-public class Pig : Target
+public class Pig : Unit, IDestructible, ITarget
 {
-    public override void IsDoingWhenHit()
+    public bool IsHit(int randomValue)
     {
-        if (isHit)
-        {
-            Cli.Print("Shoot i've been hit...");
-        }
+        return (randomValue >= 50);
     }
 
+    public void WhenHitDo()
+    {
+        /*
+        if (IsHit())
+        {
+            UnSpawn();
+        }
+        */
+    }
+
+    public bool IsFree(int randomValue, out int reward)
+    {
+        throw new NotImplementedException();
+    }
 }

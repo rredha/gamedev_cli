@@ -12,6 +12,7 @@ public class Picking : State
 
     private void PlayerPicking()
     {
+        /*
        if (Init.ProjectileUnits.Count != 0)
        {
            cli.Print(Init.ProjectileUnits.Count + " Projectiles Left");
@@ -28,6 +29,7 @@ public class Picking : State
            Lost.cli = cli;
            GameStateMachine.SetState(new Lost(GameStateMachine));
        }
+       */
     }
 
     public override void Start()

@@ -1,9 +1,10 @@
 namespace angrybird_logic.Units;
 using View;
 
-public class Rock : Projectile
+public class Rock : Units
 {
 
+    /*
     public ConsoleView? Cli { get; set; }
 
     public override void IsDoingWhileShooting()
@@ -15,4 +16,5 @@ public class Rock : Projectile
         Cli.Print("Dwayne the Rock Johnson");
         
     }
+    */
 }

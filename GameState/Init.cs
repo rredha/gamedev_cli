@@ -12,67 +12,21 @@ public class Init : State
     }
     public static ConsoleView? cli { get; set; }
     static int lvl = 1;
-    public static List<Prisonner> PrisonnersUnits = new List<Prisonner>();
-    public static List<Target> TargetUnits = new List<Target>();
-    public static List<Projectile> ProjectileUnits = new List<Projectile>();
+//    public List<Prisonner> PrisonnersUnits = new List<Prisonner>();
+ //   public List<Target> TargetUnits = new List<Target>();
+  //  public List<Projectile> ProjectileUnits = new List<Projectile>();
 
 
     private void Level()
     {
         cli.Print("Level : " + lvl.ToString());
-        SpawnerProjectileMechanism();
-        SpawnerTargetsMechanism();
-        SpawnerPrisonnersMechanism();
+    //    Spawner.SpawnerProjectileMechanism();
+    //    Spawner.SpawnerTargetsMechanism();
+    //    Spawner.SpawnerPrisonnersMechanism();
         PromptSelection();
         
         Picking.cli = cli; 
         GameStateMachine.SetState(new Picking(GameStateMachine));
-    }
-
-    private static void SpawnProjectiles(int numberOfProjectiles)
-    {
-        for (var i = 0; i < numberOfProjectiles; i++)
-        {
-           ProjectileUnits.Add(Spawn<Bird>()); 
-        }
-    }
-
-    private static void SpawnerProjectileMechanism()
-    {
-        SpawnProjectiles(3);
-        cli.Print(ProjectileUnits.Count + " Projectiles");
-
-    }
-    private static void SpawnerTargetsMechanism()
-    {
-        SpawnTargets(2);
-        cli.Print(TargetUnits.Count + " Walls");
-
-    }
-    private static void SpawnTargets(int numberOfTargets)
-    {
-        for (var i = 0; i < numberOfTargets; i++)
-        {
-            TargetUnits.Add(Spawn<Wall>()); 
-        }
-    }
-    static void SpawnerPrisonnersMechanism()
-    {
-        SpawnPrsionners(1);
-        cli.Print(PrisonnersUnits.Count + " Prisonner");
-
-
-    }
-    static void SpawnPrsionners(int num)
-    {
-        for (var i = 0; i < num; i++)
-        {
-            PrisonnersUnits.Add(Spawn<Prisonner>()); 
-        }
-    }
-    private static T Spawn<T>() where T : new()
-    {
-        return new T();
     }
 
     static void PromptSelection()
