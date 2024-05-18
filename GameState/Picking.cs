@@ -1,3 +1,4 @@
+using angrybird_logic.GAction;
 using Utils;
 using View;
 
@@ -6,31 +7,30 @@ namespace angrybird_logic.GameState;
 public class Picking : State
 {
     public static ConsoleView? cli { get; set; }
-    public Picking(StateMachine gameStateMachine) : base(gameStateMachine)
+    private LevelManager _levelManager;
+    public Picking(LevelManager levelManager) : base(levelManager)
     {
+        _levelManager = levelManager;
     }
 
     private void PlayerPicking()
     {
-        cli.Print("hello i'm picking");
-        /*
-       if (Init.ProjectileUnits.Count != 0)
+       if (Level.BirdUnits.Count != 0)
        {
-           cli.Print(Init.ProjectileUnits.Count + " Projectiles Left");
+           cli.Print(Level.BirdUnits.Count + " Projectiles Left");
            cli.Print("Press S to continue");
            if (cli.UserInput != "S") return;
            
-           Init.ProjectileUnits.RemoveAt(Init.ProjectileUnits.Count-1);
+           Level.BirdUnits.RemoveAt(Level.BirdUnits.Count-1);
            
            Aiming.cli = cli;
-           GameStateMachine.SetState(new Aiming(GameStateMachine));
+           _levelManager.SetState(new Aiming(_levelManager));
        }
        else
        {
            Lost.cli = cli;
-           GameStateMachine.SetState(new Lost(GameStateMachine));
+           _levelManager.SetState(new Lost(_levelManager));
        }
-       */
     }
 
     public override void Start()

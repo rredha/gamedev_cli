@@ -1,3 +1,4 @@
+using angrybird_logic.GAction;
 using Utils;
 using View;
 
@@ -6,8 +7,10 @@ namespace angrybird_logic.GameState;
 public class Shooting : State
 {
     public static ConsoleView? cli { get; set; }
-    public Shooting(StateMachine gameStateMachine) : base(gameStateMachine)
+    private LevelManager _levelManager;
+    public Shooting(LevelManager levelManager) : base(levelManager)
     {
+        _levelManager = levelManager;
     }
 
     private void PlayerShooting()
@@ -28,14 +31,14 @@ public class Shooting : State
         {
             cli.Print("You didnt hit the target");
             Picking.cli = cli;
-            GameStateMachine.SetState(new Picking(GameStateMachine));
+            _levelManager.SetState(new Picking(_levelManager));
         }
 
         void HitSomething()
         {
             cli.Print("Target Hit !");
             Won.cli = cli;
-            GameStateMachine.SetState(new Won(GameStateMachine));
+            _levelManager.SetState(new Won(_levelManager));
         }
     }
 

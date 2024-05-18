@@ -4,10 +4,8 @@ using View;
 var cli = new ConsoleView();
 PromptWelcome(cli);
 
-var levelManager = new LevelManager(false)
-{
-    cli = cli
-};
+var levelManager = new LevelManager(false, cli);
+Level.cli = cli;
 levelManager.SetState(new Level(levelManager));
 
 return;

@@ -1,3 +1,4 @@
+using angrybird_logic.GAction;
 using Utils;
 using View;
 
@@ -5,8 +6,10 @@ namespace angrybird_logic.GameState;
 
 public class Lost : State
 {
-    public Lost(StateMachine gameStateMachine) : base(gameStateMachine)
+    private LevelManager _levelManager;
+    public Lost(LevelManager levelManager) : base(levelManager)
     {
+        _levelManager = levelManager;
     }
     public static ConsoleView? cli { get; set; }
 
@@ -19,7 +22,7 @@ public class Lost : State
         if (cli.UserInput != "Y") return;
 
         Init.cli = cli;
-        GameStateMachine.SetState(new Init(GameStateMachine));
+        _levelManager.SetState(new Level(_levelManager));
     }
 
     public override void Start()

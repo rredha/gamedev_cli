@@ -24,9 +24,10 @@ public class Init : State
     //    Spawner.SpawnerTargetsMechanism();
     //    Spawner.SpawnerPrisonnersMechanism();
         PromptSelection();
-        
+    /*        
         Picking.cli = cli; 
         GameStateMachine.SetState(new Picking(GameStateMachine));
+        */
     }
 
     static void PromptSelection()
