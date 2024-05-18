@@ -1,20 +1,19 @@
-﻿using angrybird_logic.GAction;
+﻿using angrybird_logic.LevelState;
 using View;
 
 #region Scene Setup
 
-var Scene = new ConsoleView();
-var Logger = new Logger(Scene, true);
-Scene.Display("Angry Bird Console App");
+var scene = new ConsoleView();
+var logger = new Logger(scene, true);
+scene.Display("Angry Bird Console App");
 
 #endregion
 
 #region Execution
 
-var levelManager = new LevelManager(false, Logger);
+var levelManager = new LevelManager(false, logger);
 levelManager.GetLog();
-levelManager.SetState(new Level(levelManager, Scene));
+levelManager.SetState(new Level(levelManager, scene));
 #endregion
 
-return;
 

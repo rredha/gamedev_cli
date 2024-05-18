@@ -8,7 +8,7 @@ public class Logger
         _showLogs = showLogs;
     }
     private bool _showLogs;
-    private ConsoleView _scene { get; set; }
+    private ConsoleView _scene;
 
     public void Log(string message)
     {

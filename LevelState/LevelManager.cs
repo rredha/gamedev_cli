@@ -1,8 +1,7 @@
-using angrybird_logic.Units;
 using Utils;
 using View;
 
-namespace angrybird_logic.GAction;
+namespace angrybird_logic.LevelState;
 
     /*
      * Should be able to
@@ -13,7 +12,7 @@ namespace angrybird_logic.GAction;
      */
 public class LevelManager : StateMachine
 {
-    private bool IsLoop { get; set; }
+    private bool IsLoop;
     private int _currentLevel = 0; 
     private Logger _logger;
     private State _state { get; }

@@ -1,8 +1,7 @@
-using angrybird_logic.GAction;
 using Utils;
 using View;
 
-namespace angrybird_logic.GameState;
+namespace angrybird_logic.LevelState;
 
 public class Lost : State
 {
