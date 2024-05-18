@@ -6,16 +6,18 @@ namespace angrybird_logic.GameState;
 
 public class Shooting : State
 {
-    public static ConsoleView? cli { get; set; }
     private LevelManager _levelManager;
-    public Shooting(LevelManager levelManager) : base(levelManager)
+    private  ConsoleView _scene;
+
+    public Shooting(LevelManager levelManager, ConsoleView scene) : base(levelManager)
     {
         _levelManager = levelManager;
+        _scene = scene;
     }
 
     private void PlayerShooting()
     {
-        cli.Print("3...2..1. Shoot");
+        _scene.Display("3...2..1. Shoot");
         
         var rand = new Random().NextDouble();
         if (rand >= 0.8)
@@ -29,16 +31,14 @@ public class Shooting : State
 
         void NothingHit()
         {
-            cli.Print("You didnt hit the target");
-            Picking.cli = cli;
-            _levelManager.SetState(new Picking(_levelManager));
+            _scene.Display("You didnt hit the target");
+            _levelManager.SetState(new Picking(_levelManager, _scene));
         }
 
         void HitSomething()
         {
-            cli.Print("Target Hit !");
-            Won.cli = cli;
-            _levelManager.SetState(new Won(_levelManager));
+            _scene.Display("Target Hit !");
+            _levelManager.SetState(new Won(_levelManager, _scene));
         }
     }
 

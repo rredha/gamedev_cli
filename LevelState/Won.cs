@@ -6,24 +6,26 @@ namespace angrybird_logic.GameState;
 
 public class Won : State
 {
-    public static ConsoleView? cli { get; set; }
+    private ConsoleView _scene;
     private LevelManager _levelManager;
-    public Won(LevelManager levelManager) : base(levelManager)
+    public Won(LevelManager levelManager, ConsoleView scene) : base(levelManager)
     {
         _levelManager = levelManager;
+        _scene = scene;
     }
+    /*
     public static int lvl
     {
         get;
         set;
     }
+    */
 
     private void PlayerWon()
     {
-       cli.Print("Congratulation you won");
-       Init.cli = cli;
-       _levelManager.SetState(new Level(_levelManager));
-       lvl++;
+       _scene.Display("Congratulation you won");
+       _levelManager.SetState(new Level(_levelManager, _scene));
+      // lvl++;
     }
 
     public override void Start()

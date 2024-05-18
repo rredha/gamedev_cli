@@ -4,13 +4,6 @@ using View;
 
 namespace angrybird_logic.GAction;
 
-public class LevelManager : StateMachine
-{
-    public LevelManager(bool isLoop, ConsoleView cli)
-    {
-        IsLoop = isLoop;
-        _cli = cli;
-    }
     /*
      * Should be able to
      *      - Set the level.
@@ -18,11 +11,25 @@ public class LevelManager : StateMachine
      *          this is done by spawning the required elements on the scene.
      *      - Store the level at the end. so a getter for the current level.
      */
-
-    private ConsoleView? _cli { get; set; }
+public class LevelManager : StateMachine
+{
     private bool IsLoop { get; set; }
     private int _currentLevel = 0; 
+    private Logger _logger;
+    private State _state { get; }
 
+    public LevelManager(bool isLoop, Logger logger)
+    {
+        IsLoop = isLoop;
+        _logger = logger;
+    }
+
+    public void GetLog()
+    {
+        _logger.Log("Current level " + _currentLevel.ToString());
+    }
+    
+    /*
     public void Launch()
     {
         Level level = new Level(this);
@@ -38,5 +45,5 @@ public class LevelManager : StateMachine
     {
         
     }
-    
+*/    
 }
