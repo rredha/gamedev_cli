@@ -12,6 +12,7 @@ public class Picking : State
 
     private void PlayerPicking()
     {
+        cli.Print("hello i'm picking");
         /*
        if (Init.ProjectileUnits.Count != 0)
        {

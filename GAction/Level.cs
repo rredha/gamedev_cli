@@ -1,17 +1,21 @@
+using angrybird_logic.GameState;
 using angrybird_logic.Units;
+using Utils;
 using View;
 namespace angrybird_logic.GAction;
 
-public class Level
+public class Level : State
 {
     private int _level;
-    ConsoleView cli = new ConsoleView();
+    public ConsoleView? cli { get; set; }
     private Spawner _levelSpawner = new Spawner();
-    public Level(int level)
+    private LevelManager _levelManager;
+
+    public Level(LevelManager levelManager) : base(levelManager)
     {
-        _level = level;
+        _levelManager = levelManager;
     }
-    public void Initialise()
+    private void Initialise()
     {
         cli.Print("Hello i'm setting myself up....");
         cli.Print("current level is " + _level.ToString());
@@ -28,4 +32,13 @@ public class Level
         cli.Print(wallUnits.Count.ToString() + " Wall");
     }
 
+    private void PostInit()
+    {
+       _levelManager.SetState(new Picking(_levelManager)); 
+    }
+    public override void Start()
+    {
+        Initialise();
+        PostInit();
+    }
 }

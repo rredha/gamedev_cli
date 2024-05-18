@@ -1,7 +1,10 @@
 using angrybird_logic.Units;
+using Utils;
+using View;
+
 namespace angrybird_logic.GAction;
 
-public class LevelManager
+public class LevelManager : StateMachine
 {
     /*
      * Should be able to
@@ -11,20 +14,22 @@ public class LevelManager
      *      - Store the level at the end. so a getter for the current level.
      */
 
-    private bool IsLoop { get; set; }
-    private int _currentLevel = 0; 
-
     public LevelManager(bool isLoop)
     {
         IsLoop = isLoop;
     }
+    public ConsoleView? cli { get; set; }
+    private bool IsLoop { get; set; }
+    private int _currentLevel = 0; 
+
 
     public void Launch()
     {
-        Level lvl = new Level(_currentLevel);  
+        Level level = new Level(this);
         if (!IsLoop)
         {
-            lvl.Initialise();
+            SetState(new Level(this));
+            //level.Initialise();
             _currentLevel++;
         }
     }

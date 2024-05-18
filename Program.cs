@@ -1,13 +1,22 @@
 ﻿using angrybird_logic.GAction;
 using View;
-using angrybird_logic.GameState;
-using angrybird_logic.Units;
 
 var cli = new ConsoleView();
 PromptWelcome(cli);
 
-var levelManager = new LevelManager(false);
-levelManager.Launch();
+var levelManager = new LevelManager(false)
+{
+    cli = cli
+};
+levelManager.SetState(new Level(levelManager));
+
+return;
+
+void PromptWelcome(ConsoleView consoleInterface)
+{
+    consoleInterface.Print("Angry Bird Console App");
+    //consoleInterface.Print("Select Action");
+}
 //Spawner mySpawner = new Spawner();
 /*
 #region Spawning birds
@@ -33,10 +42,3 @@ var gameStateMachine = new GameStateMachine();
 Init.cli = cli;
 gameStateMachine.SetState(new Init(gameStateMachine));
 */
-return;
-
-void PromptWelcome(ConsoleView consoleInterface)
-{
-    consoleInterface.Print("Angry Bird Console App");
-    //consoleInterface.Print("Select Action");
-}

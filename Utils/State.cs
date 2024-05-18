@@ -9,5 +9,6 @@ public abstract class State
         GameStateMachine = gameStateMachine;
     }
 
+
     public abstract void Start();
 }
