@@ -1,6 +1,6 @@
 using angrybird_logic.Units;
 
-namespace angrybird_logic.GAction;
+namespace angrybird_logic.GameBehaviour;
 
 /*
  * For now this class only supports spwaning Birds,

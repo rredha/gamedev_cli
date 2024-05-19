@@ -1,4 +1,4 @@
-using angrybird_logic.GAction;
+using angrybird_logic.GameBehaviour;
 using angrybird_logic.Units;
 using Utils;
 using View;

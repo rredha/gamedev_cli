@@ -1,5 +1,4 @@
-namespace angrybird_logic.GAction;
-using View;
+namespace angrybird_logic.GameBehaviour;
 
 public class Aim : GameAction
 {

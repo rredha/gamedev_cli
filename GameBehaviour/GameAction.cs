@@ -1,6 +1,6 @@
 using View;
 
-namespace angrybird_logic.GAction
+namespace angrybird_logic.GameBehaviour
 {
     public abstract class GameAction  
     {
