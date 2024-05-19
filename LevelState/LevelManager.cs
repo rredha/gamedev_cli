@@ -15,7 +15,7 @@ public class LevelManager : StateMachine
     private bool IsLoop;
     private int _currentLevel = 0; 
     private Logger _logger;
-    private State _state { get; }
+    //private State _state { get; }
 
     public LevelManager(bool isLoop, Logger logger)
     {

@@ -3,28 +3,29 @@ namespace angrybird_logic.GameBehaviour;
 
 public class KeyboardController : IController
 {
-    private ConsoleView Scene { get; set; }
+    public ConsoleView Scene { get; set; }
 
-    private string? Text { get; set; }
-    /*
-    public void SetScene(ConsoleView scene)
-    {
-        Scene = scene;
-    }
-    */
+    public string? Text;
 
-    public string? TextInput()
-    {
-        string? txt = Text;
-        return txt;
-    }
     public void PlayerInput()
     {
         Text = Scene.UserInput;
     }
 
+    public string? TextInput()
+    {
+        PlayerInput();
+        if (Text != null)
+        {
+            return Text;
+        }
+
+        return "nothing here";
+    }
     public void DisplayName()
     {
         Scene.Display("KeyboardController");
     }
+    
+    
 }

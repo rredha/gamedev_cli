@@ -9,8 +9,12 @@ var logger = new Logger(scene, true);
 scene.Display("Angry Bird Console App");
 
 #endregion
-Player simplePlayer = new Player(scene, 1,new KeyboardController());
-logger.Log(simplePlayer.Controller.GetType().ToString());
+
+Player mySimplePlayer = new Player(scene, 1, new KeyboardController());
+IController mySimpleKeyboard = new KeyboardController();
+//mySimpleKeyboard.
+//logger.Log(mySimplePlayer.Score.ToString());
+//var controller = mySimplePlayer.Controller;
 /*
 #region Execution
 

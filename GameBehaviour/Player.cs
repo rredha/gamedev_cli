@@ -12,11 +12,14 @@ public class Player
         PlayerId = playerId;
         Scene = scene;
     }
-    public IController Controller;
+
+    public IController Controller { get; private set; }
+
     public int PlayerId {get; private set; }
     private ConsoleView Scene;
 
     public int Score { get; private set; }
+    
 
 
 }
