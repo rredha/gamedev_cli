@@ -1,17 +1,23 @@
-﻿using angrybird_logic.GameBehaviour;
-using angrybird_logic.LevelState;
-using View;
+﻿using Cli.NET.Actions;
+using Cli.NET.Models;
+using Cli.NET.Tools;
 
 #region Scene Setup
 
-var scene = new ConsoleView();
-var logger = new Logger(scene, true);
-scene.Display("Angry Bird Console App");
+var container = new CommandContainer();
+var commands = new CommandList
+{
+    { "exit", new ExitCommand() },
+    { "echo", new EchoCommand() },
+    { "clear", new ClearCommand() }
+};
 
+container.Display(commands);
+container.Register(commands);
+
+container.WaitForNextCommand();
 #endregion
 
-Player mySimplePlayer = new Player(scene, 1, new KeyboardController());
-IController mySimpleKeyboard = new KeyboardController();
 //mySimpleKeyboard.
 //logger.Log(mySimplePlayer.Score.ToString());
 //var controller = mySimplePlayer.Controller;

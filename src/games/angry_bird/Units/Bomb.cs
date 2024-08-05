@@ -1,7 +1,7 @@
 namespace angrybird_logic.Units;
 using View;
 
-public class Bomb : Units
+public class Bomb : Unit
 {
 
    /* 

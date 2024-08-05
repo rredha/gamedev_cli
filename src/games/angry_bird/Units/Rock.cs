@@ -1,7 +1,7 @@
 namespace angrybird_logic.Units;
 using View;
 
-public class Rock : Units
+public class Rock : Unit
 {
 
     /*

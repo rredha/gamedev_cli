@@ -30,4 +30,8 @@
       <None Remove="Utils\StateMachine\**" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="src\app\" />
+    </ItemGroup>
+
 </Project>
