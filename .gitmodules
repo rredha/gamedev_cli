@@ -1,0 +1,3 @@
+[submodule "lib/Cli.NET"]
+	path = lib/Cli.NET
+	url = https://github.com/somecodingwitch/Cli.NET
