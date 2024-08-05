@@ -27,4 +27,4 @@ public class ConsoleView
     {
         Console.WriteLine("{0} ,{1} ,{2} ",message0, message1, message2);
     }
-   */ 
+   */
