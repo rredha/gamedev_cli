@@ -25,17 +25,3 @@ container.Register(coreCommands);
 
 container.WaitForNextCommand();
 #endregion
-
-//mySimpleKeyboard.
-//logger.Log(mySimplePlayer.Score.ToString());
-//var controller = mySimplePlayer.Controller;
-/*
-#region Execution
-
-var levelManager = new LevelManager(false, logger);
-levelManager.GetLog();
-levelManager.SetState(new Level(levelManager, scene));
-#endregion
-*/
-
-
