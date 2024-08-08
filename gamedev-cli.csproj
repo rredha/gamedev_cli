@@ -18,16 +18,19 @@
       <Compile Remove="Utils\StateMachine\**" />
       <Compile Remove="Units\Rock.cs" />
       <Compile Remove="Units\Bomb.cs" />
+      <Compile Remove="gamedev-cli.test\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="ConsoleInterface\Units\**" />
       <EmbeddedResource Remove="Utils\StateMachine\**" />
+      <EmbeddedResource Remove="gamedev-cli.test\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="ConsoleInterface\Units\**" />
       <None Remove="Utils\StateMachine\**" />
+      <None Remove="gamedev-cli.test\**" />
     </ItemGroup>
 
 </Project>

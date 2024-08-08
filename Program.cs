@@ -15,12 +15,14 @@ var coreCommands = new CommandList
 
 var options = new CommandList
 {
-    {"Register", new RegisterCommand() },
-    {"Login"   , new LoginCommand()    }
+    {"Register", new RegisterCommand(container) },
+    {"Login"   , new LoginCommand( container)   }
 };
 CLNConsole.WriteLine("Welcome to rehabilitation platform", ConsoleColor.Yellow);
 CLNConsole.WriteLine("Please choose one of the following :", ConsoleColor.Yellow);
 container.Display(options);
+
+container.Register(options);
 container.Register(coreCommands);
 
 container.WaitForNextCommand();

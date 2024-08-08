@@ -2,9 +2,9 @@ using gamedev_cli.app.Interfaces;
 
 namespace gamedev_cli.app;
 
-public class Physician : User<UserType.UserEnum>, IEditUserData
+public class Dev : User<UserType.UserEnum>, IEditUserData
 {
-    public Physician(UserData data) : base(data)
+    public Dev(UserData data) : base(data)
     {
     }
 

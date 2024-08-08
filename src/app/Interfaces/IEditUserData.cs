@@ -3,15 +3,13 @@ namespace gamedev_cli.app.Interfaces;
 public interface IEditUserData
 {
     public UserData
-    GetUserData(UserType.UserEnum userType,
-                User<UserType.UserEnum> user);
+    GetUserData(User<UserType.UserEnum> user);
     
     public void
-    SetUserData(UserType.UserEnum userType,
+    SetUserData(User<UserType.UserEnum> user,
                 UserData data);
     
     public void
-    UpdateUserData(UserType.UserEnum userType,
-                   User<UserType.UserEnum> user,
+    UpdateUserData(User<UserType.UserEnum> user,
                    UserData data);
 }
