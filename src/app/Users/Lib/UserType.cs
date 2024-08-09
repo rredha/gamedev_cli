@@ -4,7 +4,7 @@ public class UserType
 {
     public enum UserEnum
     {
-        NewUser,
+        Unset,
         Patient,
         Physician,
         Dev

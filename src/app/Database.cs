@@ -1,6 +1,6 @@
 namespace gamedev_cli.app;
 
-public class Database
+public interface IDatabase
 {
     
 }

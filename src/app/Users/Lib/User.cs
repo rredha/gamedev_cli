@@ -1,11 +1,14 @@
 namespace gamedev_cli.app;
 
-public abstract class User<TUserEnum> where TUserEnum : Enum
+public class User
 {
     public UserData Data { get; set; }
-    protected User(UserData data)
+    public UserType Type { get; set; }
+
+    public User(UserData data, UserType type)
     {
         Data = data;
+        Type = type;
     }
 
 }

@@ -4,9 +4,9 @@ public class Session
 {
    private readonly float _id;
    //public User User;
-   private Database _database;
+   private IDatabase _database;
 
-   public Session(float id, Database database)
+   public Session(float id, IDatabase database)
    {
       _id = id;
       _database = database;

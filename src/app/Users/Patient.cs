@@ -1,8 +1,8 @@
 namespace gamedev_cli.app;
 
-public class Patient : User<UserType.UserEnum> 
+public class Patient : User
 {
-    public Patient(UserData data) : base(data)
+    public Patient(UserData data, UserType type) : base(data, type)
     {
     }
 }

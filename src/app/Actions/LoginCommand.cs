@@ -6,8 +6,9 @@ namespace gamedev_cli.app.Actions;
 public class LoginCommand : ICommand
 {
     private readonly CommandContainer _container;
-    public static UserData NewUserData { get; private set; }
-    private readonly NewUser _unLoggedUser = new NewUser(NewUserData);
+    private  UserData userData { get; private set; }
+    private  UserType userType { get; private set; }
+    private User user = new User(userDate, userType );
 
     public LoginCommand(CommandContainer container)
     {
