@@ -4,8 +4,10 @@ namespace gamedev_cli.app.Actions;
 
 public class ChooseDevCommand : ICommand
 {
+    private User? _user;
     public void Execute(string[] arguments)
     {
-        throw new NotImplementedException();
+        _user.Type = UserType.Dev;
+        _user.IsLogged = true;
     }
 }

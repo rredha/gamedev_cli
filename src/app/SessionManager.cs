@@ -1,23 +1,31 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace gamedev_cli.app;
 
-public class SessionManager
+public static class SessionManager
 {
-   public void Create()
+
+   public static Session Create(IDatabase database, User user)
    {
-      throw new NotImplementedException();
+         return new Session(1, database, user);
+   }
+   
+   public static Session Create(Session database)
+   {
+      return new Session();
    }
 
-   public void Load()
+   public static void Load(Session session)
    {
       throw new NotImplementedException();
    }
    
-   public void Launch()
+   public static void Launch(Session session)
    {
       throw new NotImplementedException();
    }
    
-   public void Quit()
+   public static void Quit()
    {
       throw new NotImplementedException();
    }

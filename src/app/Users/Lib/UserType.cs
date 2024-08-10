@@ -1,12 +1,9 @@
 namespace gamedev_cli.app;
 
-public class UserType
-{
-    public enum UserEnum
+    public enum UserType
     {
         Unset,
         Patient,
         Physician,
         Dev
     }
-}
