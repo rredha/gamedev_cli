@@ -1,4 +1,7 @@
-﻿namespace StateMachine
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace StateMachine
 {
     public abstract class State<TEnumState> where TEnumState : Enum
     {
