@@ -6,8 +6,6 @@ namespace gamedev_cli.app.Actions;
 public class LoginCommand : ICommand
 {
     private readonly CommandContainer _container;
-    private static UserData userData; 
-    private User _user = new User(userData, UserType.Unset);
 
     public LoginCommand(CommandContainer container)
     {
@@ -18,9 +16,9 @@ public class LoginCommand : ICommand
     {
        Console.Clear();
        CLNConsole.WriteLine("Please enter your username", ConsoleColor.Yellow);
-       _user.Data = _user.Data with { UserName = CLNConsole.ReadText() }; 
+       //_user.Data = _user.Data with { UserName = CLNConsole.ReadText() }; 
        CLNConsole.WriteLine("Logged in successfully", ConsoleColor.Yellow);
-       _user.IsLogged = true;
+       //_user.IsLogged = true;
        _container.WaitForNextCommand();
 
     }

@@ -2,6 +2,7 @@
 using Cli.NET.Models;
 using Cli.NET.Tools;
 using gamedev_cli.app.Actions;
+using gamedev_cli.app;
 
 #region Scene Setup
 
@@ -24,6 +25,8 @@ container.Display(options);
 
 container.Register(options);
 container.Register(coreCommands);
+
+User user = new User(UserType.Unset);
 
 container.WaitForNextCommand();
 #endregion

@@ -19,18 +19,25 @@
       <Compile Remove="Units\Rock.cs" />
       <Compile Remove="Units\Bomb.cs" />
       <Compile Remove="gamedev-cli.test\**" />
+      <Compile Remove="src\games\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="ConsoleInterface\Units\**" />
       <EmbeddedResource Remove="Utils\StateMachine\**" />
       <EmbeddedResource Remove="gamedev-cli.test\**" />
+      <EmbeddedResource Remove="src\games\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="ConsoleInterface\Units\**" />
       <None Remove="Utils\StateMachine\**" />
       <None Remove="gamedev-cli.test\**" />
+      <None Remove="src\games\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="lib\State Machine\" />
     </ItemGroup>
 
 </Project>

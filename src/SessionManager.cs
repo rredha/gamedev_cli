@@ -1,16 +1,13 @@
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace gamedev_cli.app;
 
 public static class SessionManager
 {
-
-   public static Session Create(IDatabase database, User user)
+   public static Session Create(User? user, IDatabase? database)
    {
          return new Session(1, database, user);
    }
    
-   public static Session Create(Session database)
+   public static Session Create()
    {
       return new Session();
    }

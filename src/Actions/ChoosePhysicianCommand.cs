@@ -10,6 +10,6 @@ public class ChoosePhysicianCommand : ICommand
         _user.Type = UserType.Physician;
         _user.IsLogged = true;
 
-        SessionManager.Create(new Session());
+        SessionManager.Create();
     }
 }
