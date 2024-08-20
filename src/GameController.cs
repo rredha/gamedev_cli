@@ -1,4 +1,4 @@
-namespace gamedev_cli.app;
+namespace gamedev;
 
 public class GameController
 {

@@ -1,4 +1,4 @@
-namespace gamedev_cli;
+namespace gamedev;
 
 public class GameCatalog
 {

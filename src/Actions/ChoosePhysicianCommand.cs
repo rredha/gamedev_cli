@@ -1,6 +1,7 @@
-using Cli.NET.Interfaces.Actions;
+using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Interfaces;
+using gamedev.Users.Lib;
 
-namespace gamedev_cli.app.Actions;
+namespace gamedev.Actions;
 
 public class ChoosePhysicianCommand : ICommand
 {

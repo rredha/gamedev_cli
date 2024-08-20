@@ -1,4 +1,5 @@
-using StateMachine;
+using gamedev.lib.State_Machine;
+
 namespace gamedev.ApplicationState;
 
 public abstract class AppState : State<AppStateMachine.AppStateEnum>

@@ -1,7 +1,7 @@
-using Cli.NET.Interfaces.Actions;
-using Cli.NET.Tools;
+using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Interfaces;
+using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Tools;
 
-namespace gamedev_cli.app.Actions;
+namespace gamedev.Actions;
 
 public class LoginCommand : ICommand
 {

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-
-namespace StateMachine
+﻿namespace gamedev.lib.State_Machine
 {
     public abstract class State<TEnumState> where TEnumState : Enum
     {

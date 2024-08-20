@@ -1,5 +1,4 @@
-using gamedev.ApplicationState;
-namespace gamedev;
+namespace gamedev.ApplicationState;
 public class LoginState : AppState
 {
     public LoginState(AppStateContext context, AppStateMachine.AppStateEnum key) : base(context ,key)

@@ -1,4 +1,6 @@
-namespace gamedev_cli.app;
+using gamedev.Users.Lib;
+
+namespace gamedev;
 
 public static class SessionManager
 {

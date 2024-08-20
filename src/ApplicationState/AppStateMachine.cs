@@ -1,4 +1,4 @@
-using StateMachine;
+using gamedev.lib.State_Machine;
 
 namespace gamedev.ApplicationState;
 public class AppStateMachine : StateMachine<AppStateMachine.AppStateEnum>

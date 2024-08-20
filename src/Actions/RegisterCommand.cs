@@ -1,8 +1,8 @@
-using Cli.NET.Interfaces.Actions;
-using Cli.NET.Models;
-using Cli.NET.Tools;
+using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Interfaces;
+using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Models;
+using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Tools;
 
-namespace gamedev_cli.app.Actions;
+namespace gamedev.Actions;
 
 public class RegisterCommand : ICommand
 {

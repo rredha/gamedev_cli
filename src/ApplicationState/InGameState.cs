@@ -1,6 +1,4 @@
-using gamedev.ApplicationState;
-
-namespace gamedev;
+namespace gamedev.ApplicationState;
 public class InGameState : AppState
 {
     public InGameState(AppStateContext context, AppStateMachine.AppStateEnum key) : base(context, key)

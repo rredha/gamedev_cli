@@ -1,4 +1,6 @@
-namespace gamedev_cli.app.Interfaces;
+using gamedev.Users.Lib;
+
+namespace gamedev.Interfaces;
 
 public interface IEditUserData
 {

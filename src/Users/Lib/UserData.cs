@@ -1,9 +1,9 @@
-namespace gamedev_cli.app;
+namespace gamedev.Users.Lib;
 
 public struct UserData
 {
     public string UserName { get;  set; }
     public string LastName { get;  set; }
     public string FirstName { get;  set; }
-    public int Age { get;  set; }
+    public string Age { get;  set; }
 }

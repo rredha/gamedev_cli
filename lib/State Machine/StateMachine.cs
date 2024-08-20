@@ -1,4 +1,4 @@
-namespace StateMachine
+namespace gamedev.lib.State_Machine
 {
     public abstract class StateMachine<TEnumState> where TEnumState : Enum
     {
@@ -6,11 +6,11 @@ namespace StateMachine
         protected State<TEnumState> CurrentState;
 
         protected bool IsTransitionState = false;
-        void Start()
+        public void Start()
         {
             CurrentState.EnterState();
         }
-        void Update()
+        public void Update()
         {
             TEnumState nextStateKey = CurrentState.GetNextState();
             
