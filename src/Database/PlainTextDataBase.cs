@@ -34,11 +34,11 @@ public class PlainTextDataBase : IDatabase
        CreateDatabaseDirectory();
    }
    
-   public void Send(User user)
+   public void Send(Session session)
    {
        CheckForExistingDatabase();
        if(!_isDatabaseFound) return;
-       File.WriteAllText(_path, user.Data.UserName);
+       File.WriteAllText(_path, session.User?.Data.UserName);
    }
    
    public void Retrieve()

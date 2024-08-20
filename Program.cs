@@ -40,6 +40,6 @@ scene.DisplayText(scene.GetUserData(session.User), ConsoleColor.Green);
 scene.DisplayText(scene.GetUserStatus(session.User), ConsoleColor.Green);
 
 session.Database.Populate();
-session.Database.Send(session.User);
+session.Database.Send(session);
 #endregion
 }
