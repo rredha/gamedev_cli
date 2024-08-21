@@ -10,6 +10,9 @@ scene.DisplayText("Welcome to The Rehabilitation Platform",
                   ConsoleColor.DarkBlue);
 #endregion
 
+
+
+#region Session Creation
 /*
  * 1- Create a session -> Done
  * 2- User as unset first -> Done
@@ -18,9 +21,7 @@ scene.DisplayText("Welcome to The Rehabilitation Platform",
  * 5- Display.
  */
 
-
-#region Session Creation
-
+/*
 Session session = new Session(1,
                       new PlainTextDataBase(),
                              new User(UserType.Unset));
@@ -41,5 +42,12 @@ scene.DisplayText(scene.GetUserStatus(session.User), ConsoleColor.Green);
 
 session.Database.Populate();
 session.Database.Send(session);
+*/
+#endregion
+
+#region Application State Machine
+
+
+
 #endregion
 }

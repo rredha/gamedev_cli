@@ -1,17 +1,15 @@
-using gamedev.Users.Lib;
+using gamedev.lib.Mock;
 
 namespace gamedev.ApplicationState;
 
 public class AppStateContext
 {
-   public User User { get; private set; }
-   public IDatabase Database { get; private set; }
    public Session Session { get; private set; }
+   public Scene Scene { get; private set; }
 
-   public AppStateContext(User user, IDatabase database, Session session)
+   public AppStateContext(Scene scene, Session session)
    {
-      User = user;
-      Database = database;
+      Scene = scene;
       Session = session;
    }
 }
