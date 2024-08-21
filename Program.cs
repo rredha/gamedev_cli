@@ -1,4 +1,5 @@
 ﻿using gamedev;
+using gamedev.ApplicationState;
 using gamedev.Database;
 using gamedev.lib.Mock;
 using gamedev.Users.Lib;
@@ -47,7 +48,20 @@ session.Database.Send(session);
 
 #region Application State Machine
 
+Session session = new Session(1,
+                              new PlainTextDataBase(),
+                              new User(UserType.Unset)
+                              );
 
+var appStateContext = new AppStateContext(scene, session);
+var appStateMachine = new AppStateMachine
+{
+    Context = appStateContext
+};
+
+appStateMachine.InitialiseState();
+appStateMachine.Start();
+appStateMachine.Update();
 
 #endregion
 }
