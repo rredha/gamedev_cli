@@ -8,5 +8,7 @@ public abstract class AppState : State<AppStateMachine.AppStateEnum>
     protected AppState(AppStateContext context, AppStateMachine.AppStateEnum key) : base(key)
     {
         _context = context;
+        OnAppStateChanged();
     }
+
 }

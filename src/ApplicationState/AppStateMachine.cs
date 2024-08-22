@@ -1,10 +1,11 @@
 using gamedev.ApplicationState.Stages;
+using gamedev.Events;
 using gamedev.lib.State_Machine;
+using gamedev.lib.State_Machine.Cli;
 
 namespace gamedev.ApplicationState;
 public class AppStateMachine : StateMachine<AppStateMachine.AppStateEnum>
 {
-
     public AppStateContext Context { get; init; }
 
     public enum AppStateEnum
@@ -23,6 +24,24 @@ public class AppStateMachine : StateMachine<AppStateMachine.AppStateEnum>
         States.Add(AppStateEnum.Login, new LoginState(Context, AppStateEnum.Login));
         States.Add(AppStateEnum.Main, new MainState(Context, AppStateEnum.Main));
         States.Add(AppStateEnum.InGame, new InGameState(Context, AppStateEnum.InGame));
+    }
+
+    public void SetInitialState()
+    {
         CurrentState = States[AppStateEnum.Login];
     }
+
+    public void RunAppStateMachine()
+    {
+        Start();
+        Update();
+    }
+
+    // AppStateMachine is the Subscriber
+    public void OnAppStateChanged(object source, EventArgs e)
+    {
+        RunAppStateMachine();
+    }
+
+
 }

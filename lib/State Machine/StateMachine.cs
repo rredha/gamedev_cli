@@ -3,7 +3,9 @@ namespace gamedev.lib.State_Machine
     public abstract class StateMachine<TEnumState> where TEnumState : Enum
     {
         protected Dictionary<TEnumState, State<TEnumState>> States = new Dictionary<TEnumState, State<TEnumState>>();
-        protected State<TEnumState> CurrentState;
+        // changed to check if it will work with Events
+        // protected State<TEnumState> CurrentState;
+        public State<TEnumState> CurrentState { get; set; }
 
         public void Start()
         {
@@ -13,12 +15,11 @@ namespace gamedev.lib.State_Machine
         {
             TEnumState nextStateKey = CurrentState.GetNextState();
             
-            if (nextStateKey.Equals(CurrentState.StateKey))
+            if (nextStateKey.Equals(CurrentState.StateKey)) 
             {
                 CurrentState.UpdateState();
             } 
             TransitionToState(nextStateKey);
-
         }
 
         private void TransitionToState(TEnumState stateKey)

@@ -58,10 +58,11 @@ var appStateMachine = new AppStateMachine
 {
     Context = appStateContext
 };
-
 appStateMachine.InitialiseState();
-appStateMachine.Start();
-appStateMachine.Update();
+appStateMachine.SetInitialState();
+appStateMachine.CurrentState.AppStateChanged += appStateMachine.OnAppStateChanged;
+//appStateMachine.Start();
+//appStateMachine.Update();
 
 #endregion
 }

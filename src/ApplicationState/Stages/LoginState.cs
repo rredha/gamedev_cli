@@ -25,4 +25,9 @@ public class LoginState : AppState
        return AppStateMachine.AppStateEnum.Main;
     }
 
+     protected override void OnAppStateChanged()
+     {
+        Console.WriteLine("Hello");
+     }
+
 }
