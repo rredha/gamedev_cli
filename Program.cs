@@ -14,18 +14,14 @@ scene.DisplayText("Welcome to The Rehabilitation Platform",
 
 
 #region Session Creation
-/*
- * 1- Create a session -> Done
- * 2- User as unset first -> Done
- * 3- Fill the information -> Done
- * 4- Store in PlainTextDataBase
- * 5- Display.
- */
 
-/*
 Session session = new Session(1,
                       new PlainTextDataBase(),
                              new User(UserType.Unset));
+#endregion
+
+#region User Data Entry and Database
+
 scene.DisplayText("Please enter your First Name", ConsoleColor.Blue);
 if (session.User != null) session.User.Data = session.User.Data with { FirstName = scene.GetUserInput() };
 
@@ -43,11 +39,13 @@ scene.DisplayText(scene.GetUserStatus(session.User), ConsoleColor.Green);
 
 session.Database.Populate();
 session.Database.Send(session);
-*/
+
+
 #endregion
 
-#region Application State Machine
 
+#region Application State Machine
+/*
 Session session = new Session(1,
                               new PlainTextDataBase(),
                               new User(UserType.Unset)
@@ -63,6 +61,6 @@ appStateMachine.SetInitialState();
 appStateMachine.CurrentState.AppStateChanged += appStateMachine.OnAppStateChanged;
 //appStateMachine.Start();
 //appStateMachine.Update();
-
+*/
 #endregion
 }
