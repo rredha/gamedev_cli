@@ -1,6 +1,7 @@
 ﻿using gamedev;
 using gamedev.ApplicationState;
 using gamedev.Database;using gamedev.GameCatalog;
+using gamedev.GameController;
 using gamedev.lib.Mock;
 using gamedev.Users.Lib;
 
@@ -61,31 +62,19 @@ appStateMachine.CurrentState.AppStateChanged += appStateMachine.OnAppStateChange
 */
 #endregion
 
-#region Game Catalog and Controllers
+#region Game Catalog and Controller Library
 /* 
- * Display the Game Catalog
- *  This one is based on the available controller.
- *  And also on the degree of freedom of the games.
- *
- * Display the current GameController
- *  And have a default behavior if no controller are detected.
- *  The default behavior is to set the controller to either
- *  keyboard, or mouse.
- *
  * Create a Game Class, that should be able to communicate
  *  between the States (application state, and game state)
  *  record data, that it will defer to the appropriate class,
  *  responsible for managing data and logging data.
- * 
  */
-/*
-GameCatalog Catalog = new GameCatalog();
 
-scene.DisplayText(Catalog.FormatGameInfo(Catalog.SnakeInfo), ConsoleColor.Red);
+//    GameLibrary lib = new GameLibrary();
+//    scene.DisplayText(lib.FormatGameInfo(lib.GameInfoList[2]), ConsoleColor.Red);
 
-*/
-    GameLibrary lib = new GameLibrary();
-    scene.DisplayText(lib.FormatGameInfo(lib.GameInfoList[2]), ConsoleColor.Red);
-
-    #endregion
+//    ControllerLibrary lib = new ControllerLibrary();
+//    scene.DisplayText(lib.FormatControllerInfo(lib.ControllerInfoList[1]),
+//                      ConsoleColor.Red);
+#endregion
 }
