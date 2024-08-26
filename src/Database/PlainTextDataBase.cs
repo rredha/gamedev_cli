@@ -38,7 +38,7 @@ public class PlainTextDataBase : IDatabase
    {
        CheckForExistingDatabase();
        if(!_isDatabaseFound) return;
-       File.WriteAllText(_path, session.User?.Data.UserName);
+       File.WriteAllText(_path, session.User?.Data.LastName);
    }
    
    public void Retrieve()

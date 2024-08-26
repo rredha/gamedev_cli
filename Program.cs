@@ -1,6 +1,7 @@
 ﻿using gamedev;
 using gamedev.ApplicationState;
-using gamedev.Database;using gamedev.GameCatalog;
+using gamedev.Database;
+using gamedev.GameCatalog;
 using gamedev.GameController;
 using gamedev.lib.Mock;
 using gamedev.Users.Lib;
@@ -15,20 +16,17 @@ scene.DisplayText("Welcome to The Rehabilitation Platform",
 #region Session Creation
 
 Session session = new Session(1,
-                      new PlainTextDataBase(),
+                      new CsvDataBase(),
                              new User(UserType.Patient));
 #endregion
 
 #region User Data Entry and Database
-/*
+
 scene.DisplayText("Please enter your First Name", ConsoleColor.Blue);
 if (session.User != null) session.User.Data = session.User.Data with { FirstName = scene.GetUserInput() };
 
 scene.DisplayText("Please enter your Last Name", ConsoleColor.Blue);
 if (session.User != null) session.User.Data = session.User.Data with { LastName = scene.GetUserInput() };
-
-scene.DisplayText("Please enter your Username", ConsoleColor.Blue);
-if (session.User != null) session.User.Data = session.User.Data with { UserName = scene.GetUserInput() };
 
 scene.DisplayText("Please enter your age", ConsoleColor.Blue);
 if (session.User != null) session.User.Data = session.User.Data with { Age = scene.GetUserInput() };
@@ -36,10 +34,10 @@ if (session.User != null) session.User.Data = session.User.Data with { Age = sce
 scene.DisplayText(scene.GetUserData(session.User), ConsoleColor.Green);
 scene.DisplayText(scene.GetUserStatus(session.User), ConsoleColor.Green);
 
-session.Database.Populate();
-session.Database.Send(session);
+session.Database?.Send(session);
 
-*/
+session.Database?.Retrieve();
+
 #endregion
 
 #region Application State Machine
@@ -76,5 +74,18 @@ appStateMachine.CurrentState.AppStateChanged += appStateMachine.OnAppStateChange
 //    ControllerLibrary lib = new ControllerLibrary();
 //    scene.DisplayText(lib.FormatControllerInfo(lib.ControllerInfoList[1]),
 //                      ConsoleColor.Red);
+#endregion
+
+#region Game Entry
+/*
+ * Game :
+ * Create what constitute a game
+ * - It should have an Entry
+ * - Display some info
+ * - When selected it should create a scene and launch the game logic.
+ * - Should have a state.
+ * - Should be able to communicate with the database.
+ * - Should have a tracking system.
+ */
 #endregion
 }

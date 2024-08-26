@@ -45,8 +45,7 @@ public class Scene
 
     public string GetUserData(User user)
     {
-        return string.Format("Welcome {0}.\n {1} {2}\n Age : {3}",
-            user.Data.UserName,
+        return string.Format("Welcome {0} {1}\n Age : {2}",
             user.Data.FirstName,
             user.Data.LastName,
             user.Data.Age);
