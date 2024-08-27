@@ -14,14 +14,27 @@ scene.DisplayText("Welcome to The Rehabilitation Platform",
 #endregion
 
 #region Session Creation
-
 Session session = new Session(1,
-                      new CsvDataBase(),
+                      new MockDatabase(),
                              new User(UserType.Patient));
 #endregion
 
-#region User Data Entry and Database
+#region Application State Machine
 
+var appStateContext = new AppStateContext(scene, session);
+var appStateMachine = new AppStateMachine
+{
+    Context = appStateContext
+};
+appStateMachine.InitialiseState();
+appStateMachine.SetInitialState();
+appStateMachine.CurrentState.AppStateChanged += appStateMachine.OnAppStateChanged;
+//appStateMachine.Start();
+//appStateMachine.Update();
+#endregion
+
+#region User Data Entry and Database
+/*
 scene.DisplayText("Please enter your First Name", ConsoleColor.Blue);
 if (session.User != null) session.User.Data = session.User.Data with { FirstName = scene.GetUserInput() };
 
@@ -37,26 +50,6 @@ scene.DisplayText(scene.GetUserStatus(session.User), ConsoleColor.Green);
 session.Database?.Send(session);
 
 session.Database?.Retrieve();
-
-#endregion
-
-#region Application State Machine
-/*
-Session session = new Session(1,
-                              new PlainTextDataBase(),
-                              new User(UserType.Unset)
-                              );
-
-var appStateContext = new AppStateContext(scene, session);
-var appStateMachine = new AppStateMachine
-{
-    Context = appStateContext
-};
-appStateMachine.InitialiseState();
-appStateMachine.SetInitialState();
-appStateMachine.CurrentState.AppStateChanged += appStateMachine.OnAppStateChanged;
-//appStateMachine.Start();
-//appStateMachine.Update();
 */
 #endregion
 
