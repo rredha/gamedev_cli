@@ -1,13 +1,24 @@
 using gamedev.ApplicationState.Stages;
-using gamedev.Events;
+//using gamedev.Events;
 using gamedev.lib.State_Machine;
-using gamedev.lib.State_Machine.Cli;
+//using gamedev.lib.State_Machine.Cli;
 
 namespace gamedev.ApplicationState;
 public class AppStateMachine : StateMachine<AppStateMachine.AppStateEnum>
 {
-    public AppStateContext Context { get; init; }
+    private AppStateContext _context; 
+    public AppStateMachine(AppStateContext context)
+    {
+        _context = context;
+        InitialiseState();
+        SetInitialState();
+    }
 
+    public void CurrentStateChange()
+    {
+        Start();
+        Update();
+    }
     public enum AppStateEnum
     {
         Login,
@@ -15,15 +26,16 @@ public class AppStateMachine : StateMachine<AppStateMachine.AppStateEnum>
         InGame,
     }
 
+
     // Made it public to access it in this instance,
     // since there is no event system like the Unity Monobehaviour
     // loop cycle.
     // Could also mock it, I'll see that later.
     public void InitialiseState()
     {
-        States.Add(AppStateEnum.Login, new LoginState(Context, AppStateEnum.Login));
-        States.Add(AppStateEnum.Main, new MainState(Context, AppStateEnum.Main));
-        States.Add(AppStateEnum.InGame, new InGameState(Context, AppStateEnum.InGame));
+        States.Add(AppStateEnum.Login, new LoginState(_context, AppStateEnum.Login));
+        States.Add(AppStateEnum.Main, new MainState(_context, AppStateEnum.Main));
+        States.Add(AppStateEnum.InGame, new InGameState(_context, AppStateEnum.InGame));
     }
 
     public void SetInitialState()
@@ -31,17 +43,5 @@ public class AppStateMachine : StateMachine<AppStateMachine.AppStateEnum>
         CurrentState = States[AppStateEnum.Login];
     }
 
-    public void RunAppStateMachine()
-    {
-        Start();
-        Update();
-    }
-
     // AppStateMachine is the Subscriber
-    public void OnAppStateChanged(object source, EventArgs e)
-    {
-        RunAppStateMachine();
-    }
-
-
 }

@@ -1,4 +1,5 @@
 namespace gamedev.ApplicationState.Stages;
+
 public class LoginState : AppState
 {
     public LoginState(AppStateContext context, AppStateMachine.AppStateEnum key) : base(context ,key)
@@ -24,10 +25,5 @@ public class LoginState : AppState
     {
        return AppStateMachine.AppStateEnum.Main;
     }
-
-     protected override void OnAppStateChanged()
-     {
-        Console.WriteLine("Hello");
-     }
 
 }

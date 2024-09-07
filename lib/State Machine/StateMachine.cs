@@ -2,11 +2,25 @@ namespace gamedev.lib.State_Machine
 {
     public abstract class StateMachine<TEnumState> where TEnumState : Enum
     {
-        protected Dictionary<TEnumState, State<TEnumState>> States = new Dictionary<TEnumState, State<TEnumState>>();
+        protected Dictionary<TEnumState, State<TEnumState>> States =
+            new Dictionary<TEnumState, State<TEnumState>>();
         // changed to check if it will work with Events
         // protected State<TEnumState> CurrentState;
         public State<TEnumState> CurrentState { get; set; }
+        
+        /*
+         * Subscriber is the StateMachine
+         * Do i need to have a constructor ????
+         */
 
+        /*
+        public StateMachine(State<TEnumState> currentState)
+        {
+            CurrentState = currentState;
+            CurrentState.StateChanged += Start;
+            CurrentState.StateChanged += Update;
+        }
+        */
         public void Start()
         {
             CurrentState.EnterState();
@@ -28,5 +42,6 @@ namespace gamedev.lib.State_Machine
             CurrentState = States[stateKey];
             CurrentState.EnterState();
         }
+        
     }
 }

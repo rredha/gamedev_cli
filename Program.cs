@@ -22,13 +22,8 @@ Session session = new Session(1,
 #region Application State Machine
 
 var appStateContext = new AppStateContext(scene, session);
-var appStateMachine = new AppStateMachine
-{
-    Context = appStateContext
-};
-appStateMachine.InitialiseState();
-appStateMachine.SetInitialState();
-appStateMachine.CurrentState.AppStateChanged += appStateMachine.OnAppStateChanged;
+var appStateMachine = new AppStateMachine(appStateContext);
+
 //appStateMachine.Start();
 //appStateMachine.Update();
 #endregion
