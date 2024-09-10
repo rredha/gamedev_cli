@@ -1,6 +1,8 @@
 using gamedev.ApplicationState.Stages;
 //using gamedev.Events;
 using gamedev.lib.State_Machine;
+using EventHandler = gamedev.lib.State_Machine.EventHandler;
+
 //using gamedev.lib.State_Machine.Cli;
 
 namespace gamedev.ApplicationState;
@@ -12,6 +14,7 @@ public class AppStateMachine : StateMachine<AppStateMachine.AppStateEnum>
         _context = context;
         InitialiseState();
         SetInitialState();
+        CurrentState.StateChanged += CurrentStateChange;
     }
 
     public void CurrentStateChange()
