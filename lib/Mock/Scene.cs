@@ -1,7 +1,6 @@
 using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Actions;
 using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Models;
 using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Tools;
-using gamedev.Users.Lib;
 
 namespace gamedev.lib.Mock;
 
@@ -33,27 +32,29 @@ public class Scene
         CLNConsole.WriteLine(text, color);
     }
 
-    public void DisplayOptions(CommandList options)
+    public void Options(CommandList options)
     {
         Container.Display(options);
     }
 
-    public string GetUserInput()
+    public string? GetUserInput()
     {
        return CLNConsole.ReadText();
     }
 
-    public string GetUserData(User user)
+    /*
+    public string GetUserData(User.Lib.User user)
     {
         return string.Format("Welcome {0} {1}\n Age : {2}",
             user.Data.FirstName,
             user.Data.LastName,
             user.Data.Age);
     }
-    public string GetUserStatus(User user)
+    public string GetUserStatus(User.Lib.User user)
     {
         return user.Type.ToString();
     }
+    */
     public void WaitForUserInput()
     {
         CLNConsole.ReadText();

@@ -1,14 +1,13 @@
-using gamedev.Users.Lib;
-
 namespace gamedev;
 
+/*
 public class Session
 {
    public int Id { get; private set; }
    public IDatabase? Database { get; private set; }
-   public User? User { get; private set; }
+   public User.Lib.User? User { get; private set; }
 
-   public Session(int id, IDatabase? database, User? user)
+   public Session(int id, IDatabase? database, User.Lib.User? user)
    {
       Id = id;
       Database = database;
@@ -32,3 +31,4 @@ public class Session
        session.Id++;
    }
 }
+*/

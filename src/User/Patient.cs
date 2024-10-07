@@ -1,8 +1,8 @@
-using gamedev.Users.Lib;
+using gamedev.User.Lib;
 
-namespace gamedev.Users;
+namespace gamedev.User;
 
-public class Patient : User
+public class Patient : Lib.User
 {
     public Patient(UserData data, UserType type) : base(data, type)
     {

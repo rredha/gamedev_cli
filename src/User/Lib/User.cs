@@ -1,11 +1,12 @@
-namespace gamedev.Users.Lib;
+namespace gamedev.User.Lib;
 
 public class User
 {
-    public UserData Data { get; set; }
+    public PersonalData Data { get; set; }
     public UserType Type { get; set; }
     public bool IsLogged { get; set; }
 
+    /*
     public User(UserType type)
     {
         Type = type;
@@ -15,5 +16,6 @@ public class User
         Data = data;
         Type = type;
     }
+    */
 
 }

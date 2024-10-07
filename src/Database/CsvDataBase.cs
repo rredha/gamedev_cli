@@ -1,11 +1,11 @@
 using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
-using gamedev.Users.Lib;
 
 namespace gamedev.Database;
 
-public class CsvDataBase : IDatabase
+    /*
+public class CsvDataBase : IAccessDatabase
 {
     private const string DatabasePath = "/home/redha/share/games/gamedev/database/example.csv";
     public bool IsAccessible { get; set; }
@@ -48,3 +48,4 @@ public class CsvDataBase : IDatabase
         }
     }
 }
+    */

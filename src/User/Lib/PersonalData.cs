@@ -1,6 +1,6 @@
-namespace gamedev.Users.Lib;
+namespace gamedev.User.Lib;
 
-public struct UserData
+public struct PersonalData
 {
     public string? LastName { get;  set; }
     public string? FirstName { get;  set; }

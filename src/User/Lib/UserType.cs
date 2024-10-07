@@ -1,9 +1,8 @@
-namespace gamedev.Users.Lib;
+namespace gamedev.User.Lib;
 
     public enum UserType
     {
-        Unset,
         Patient,
-        Physician,
+        Physicist,
         Dev
     }

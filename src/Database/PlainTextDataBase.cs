@@ -1,8 +1,7 @@
-using gamedev.Users.Lib;
-
 namespace gamedev.Database;
 
-public class PlainTextDataBase : IDatabase
+/*
+public class PlainTextDataBase : IAccessDatabase
 {
    private const string Directory = @"/home/redha/share/games/gamedev/data/";
    private const string Filename = "test.txt";
@@ -48,3 +47,4 @@ public class PlainTextDataBase : IDatabase
        DatabaseContent = File.ReadAllLines(_path);
    }
 }
+*/

@@ -1,12 +1,12 @@
-using gamedev.Users.Lib;
-
 namespace gamedev.Interfaces;
 
-public interface IEditUserData
+/*
+public interface IAccessUserdata
 {
-    public UserData GetUserData(User user);
+    public UserData GetUserData(User.Lib.User user);
     
-    public void SetUserData(User user, UserData data);
+    public void SetUserData(User.Lib.User user, UserData data);
     
-    public void UpdateUserData(User user, UserData data);
+    public void UpdateUserData(User.Lib.User user, UserData data);
 }
+*/

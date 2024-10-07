@@ -23,6 +23,10 @@
       <Compile Remove="src\SessionManager.cs" />
       <Compile Remove="src\Actions\ChoosePhysicianCommand.cs" />
       <Compile Remove="src\Actions\RegisterCommand.cs" />
+      <Compile Remove="src\User\Lib\**" />
+      <Compile Remove="src\User\Dev.cs" />
+      <Compile Remove="src\User\Patient.cs" />
+      <Compile Remove="src\User\Physician.cs" />
     </ItemGroup>
 
     <ItemGroup>
@@ -30,6 +34,7 @@
       <EmbeddedResource Remove="Utils\StateMachine\**" />
       <EmbeddedResource Remove="gamedev-cli.test\**" />
       <EmbeddedResource Remove="src\games\**" />
+      <EmbeddedResource Remove="src\User\Lib\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -37,6 +42,7 @@
       <None Remove="Utils\StateMachine\**" />
       <None Remove="gamedev-cli.test\**" />
       <None Remove="src\games\**" />
+      <None Remove="src\User\Lib\**" />
     </ItemGroup>
 
     <ItemGroup>
