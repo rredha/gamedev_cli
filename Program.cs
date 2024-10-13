@@ -1,5 +1,5 @@
 ﻿using gamedev.Actions.UserRegistration;
-using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Models;
+using Cli.NET.Models;
 using gamedev.lib.Mock;
 using gamedev.User;
 
@@ -16,7 +16,7 @@ var userRegistrationCommands = new CommandList
 
 scene.Options(userRegistrationCommands);
 scene.Container.Register(userRegistrationCommands);
-scene.WaitForUserCommand(); 
+scene.WaitForUserCommand();
 scene.DisplayText(UserManager.CurrentUser.PersonalData.ToString(), ConsoleColor.Black);
 #endregion
 

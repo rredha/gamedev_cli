@@ -1,4 +1,4 @@
-using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Interfaces;
+using Cli.NET.Interfaces.Actions;
 namespace gamedev.lib.Mock;
 
 public class Options
@@ -9,9 +9,9 @@ public class Options
 
     public void AddOptions(string optionName, ICommand command)
     {
-       options.Add(optionName, command); 
+       options.Add(optionName, command);
     }
-    
+
     public void CreateOptionList(Dictionary<string, ICommand> options)
     {
         foreach (var option in options)

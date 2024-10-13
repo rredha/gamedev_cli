@@ -46,6 +46,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Cli.NET" Version="2.2.0-alpha" />
       <PackageReference Include="CsvHelper" Version="33.0.1" />
     </ItemGroup>
 

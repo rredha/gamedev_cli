@@ -1,4 +1,4 @@
-using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Interfaces;
+using Cli.NET.Interfaces.Actions;
 using gamedev.lib.Mock;
 using gamedev.User;
 using gamedev.User.Data.Type;
@@ -28,7 +28,7 @@ public class SigninCommand : ICommand
 
         Scene.DisplayText("Age :", ConsoleColor.Blue);
         Age = Scene.GetUserInput();
-        
+
         Scene.DisplayText("Your are a :", ConsoleColor.Blue);
         Scene.DisplayText("1-Patient",   ConsoleColor.Blue);
         Scene.DisplayText("2-Physicist", ConsoleColor.Blue);
@@ -57,6 +57,6 @@ public class SigninCommand : ICommand
     {
         Scene.DisplayText($"{LastName} {FirstName}, aged {Age}, is a {UserType}",
                             ConsoleColor.DarkGreen);
-        
+
     }
 }

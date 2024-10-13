@@ -1,6 +1,6 @@
-using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Actions;
-using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Models;
-using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Tools;
+using Cli.NET.Actions;
+using Cli.NET.Models;
+using Cli.NET.Tools;
 
 namespace gamedev.lib.Mock;
 
@@ -13,7 +13,7 @@ public class Scene
         Container = new CommandContainer();
     }
 
-    
+
     public CommandList CoreOption(CommandContainer container)
     {
         CommandList coreCommands = new CommandList
@@ -25,7 +25,7 @@ public class Scene
         return coreCommands;
     }
 
-    
+
 
     public void DisplayText(string text, ConsoleColor color)
     {
@@ -34,7 +34,12 @@ public class Scene
 
     public void Options(CommandList options)
     {
-        Container.Display(options);
+        //Container.Display(options);
+      var optKeys = options.Keys;
+        foreach (var opt in optKeys)
+        {
+          CLNConsole.WriteLine(opt);
+        }
     }
 
     public string? GetUserInput()
@@ -59,10 +64,10 @@ public class Scene
     {
         CLNConsole.ReadText();
     }
-    
+
     public void WaitForUserCommand()
     {
         Container.WaitForNextCommand();
     }
-        
+
 }

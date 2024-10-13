@@ -1,4 +1,4 @@
-using gamedev.lib.Cli.NET.Cli.NET.Cli.NET.Interfaces;
+using Cli.NET.Interfaces.Actions;
 using gamedev.lib.Mock;
 
 namespace gamedev.Actions.UserRegistration;
