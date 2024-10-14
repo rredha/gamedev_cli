@@ -37,16 +37,16 @@ public class SigninCommand : ICommand
         switch (Scene.GetUserInput())
         {
             case "1":
-                UserType = "UPatient";
+                UserType = "Patient";
                 break;
             case "2":
-                UserType = "UPhysicist";
+                UserType = "Physicist";
                 break;
             case "3":
-                UserType = "UDev";
+                UserType = "Dev";
                 break;
             default:
-                UserType = "UDefault";
+                UserType = "Default";
                 break;
         }
         PrintSigninInfo();

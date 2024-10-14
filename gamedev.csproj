@@ -24,8 +24,6 @@
       <Compile Remove="src\Actions\ChoosePhysicianCommand.cs" />
       <Compile Remove="src\Actions\RegisterCommand.cs" />
       <Compile Remove="src\User\Lib\**" />
-      <Compile Remove="src\User\Dev.cs" />
-      <Compile Remove="src\User\Patient.cs" />
       <Compile Remove="src\User\Physician.cs" />
     </ItemGroup>
 

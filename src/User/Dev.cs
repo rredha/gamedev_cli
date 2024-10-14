@@ -1,26 +1,13 @@
-using gamedev.Interfaces;
-using gamedev.User.Lib;
+using gamedev.User.Data.Type;
 
 namespace gamedev.User;
 
-public class Dev : Lib.User, IEditUserData
+public class Dev : Common
 {
-    public Dev(UserData data, UserType type) : base(data, type)
+    public Dev(Personal personalData) : base(personalData)
     {
     }
-
-    public UserData GetUserData(Lib.User user)
+    public Dev() : base()
     {
-        throw new NotImplementedException();
-    }
-
-    public void SetUserData(Lib.User user, UserData data)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void UpdateUserData(Lib.User user, UserData data)
-    {
-        throw new NotImplementedException();
     }
 }

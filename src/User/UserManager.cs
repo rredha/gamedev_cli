@@ -8,21 +8,21 @@ public static class UserManager
     {
         switch (userType)
         {
-           case "UPatient" :
+           case "Patient" :
                Console.WriteLine("Hello i'm a patient");
-               CurrentUser = new UPatient();
+               CurrentUser = new Patient();
                return CurrentUser;
-           case "UPhysicist" :
+           case "Physicist" :
                Console.WriteLine("Hello i'm a physicist");
-               CurrentUser = new UPhysicist();
+               CurrentUser = new Physicist();
                return CurrentUser;
-           case "UDev" :
+           case "Dev" :
                Console.WriteLine("Hello i'm a dev");
-               CurrentUser = new UDev();
+               CurrentUser = new Dev();
                return CurrentUser;
            default:
                Console.WriteLine("By default, i'm a dev");
-               CurrentUser = new UDev();
+               CurrentUser = new Dev();
                return CurrentUser;
         } 
     }

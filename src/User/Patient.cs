@@ -1,10 +1,14 @@
-using gamedev.User.Lib;
+using gamedev.User.Data;
+using gamedev.User.Data.Type;
 
 namespace gamedev.User;
 
-public class Patient : Lib.User
+public class Patient : Common
 {
-    public Patient(UserData data, UserType type) : base(data, type)
+    public Patient(Personal personalData) : base(personalData)
+    {
+    }
+    public Patient() : base()
     {
     }
 }
