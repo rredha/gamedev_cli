@@ -8,6 +8,9 @@ using gamedev.User;
 Scene scene = new Scene();
 scene.DisplayText("Welcome to The Rehabilitation Software",
                   ConsoleColor.DarkBlue);
+#endregion
+
+#region User Registration
 var userRegistrationCommands = new CommandList
 {
     { "Signin", new SigninCommand(scene) },
