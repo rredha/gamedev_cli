@@ -2,6 +2,7 @@
 using Cli.NET.Models;
 using gamedev.lib.Mock;
 using gamedev.User;
+using gamedev.Survey;
 
 {
 #region Scene Setup
@@ -11,6 +12,7 @@ scene.DisplayText("Welcome to The Rehabilitation Software",
 #endregion
 
 #region User Registration
+/*
 var userRegistrationCommands = new CommandList
 {
     { "Signin", new SigninCommand(scene) },
@@ -21,9 +23,19 @@ scene.Options(userRegistrationCommands);
 scene.Container.Register(userRegistrationCommands);
 scene.WaitForUserCommand();
 scene.DisplayText(UserManager.CurrentUser.PersonalData.ToString(), ConsoleColor.Black);
+*/
 #endregion
 
-#region Game Entry
+#region Integrated Survey System
+
+Processor processor = new Processor();
+processor.Retrieve();
+processor.Display();
+
+
+#endregion
+
+#region Game Entry Point
 
 /*
  * Game :
