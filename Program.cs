@@ -27,11 +27,11 @@ scene.DisplayText(UserManager.CurrentUser.PersonalData.ToString(), ConsoleColor.
 #endregion
 
 #region Integrated Survey System
-
+/*
 Processor processor = new Processor();
 processor.Retrieve();
 processor.Display();
-
+*/
 
 #endregion
 

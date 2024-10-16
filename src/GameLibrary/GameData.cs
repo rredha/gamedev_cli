@@ -1,4 +1,4 @@
-namespace gamedev.GameCatalog;
+namespace gamedev.GameLibrary;
 
 public static class GameData
 {
