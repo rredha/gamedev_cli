@@ -1,12 +1,11 @@
-using gamedev.lib.State_Machine;
+using gamedev;
 
-namespace gamedev.ApplicationState;
 
-public abstract class AppState : State<AppStateMachine.AppStateEnum>
+public abstract class AppState 
 {
-    protected AppStateContext _context;
-    protected AppState(AppStateContext context, AppStateMachine.AppStateEnum key) : base(key)
+    protected Session _sessionCtx;
+    protected AppState(Session session) 
     {
-        _context = context;
+         _sessionCtx = session;
     }
 }

@@ -11,6 +11,11 @@ scene.DisplayText("Welcome to The Rehabilitation Software",
                   ConsoleColor.DarkBlue);
 #endregion
 
+#region State Machine
+
+
+
+#endregion
 #region User Registration
 /*
 var userRegistrationCommands = new CommandList

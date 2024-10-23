@@ -1,9 +1,8 @@
 namespace gamedev.Database;
 
-/*
-public class MockDatabase : IAccessDatabase
+public class MockDatabase : IDatabase
 {
-    public bool IsAccessible { get; set; }
+    //public bool IsAccessible { get; set; }
     public void Populate()
     {
         Console.WriteLine("Population Database");
@@ -19,4 +18,3 @@ public class MockDatabase : IAccessDatabase
         Console.WriteLine("Retrieving data from database");
     }
 }
-*/
