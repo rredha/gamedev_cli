@@ -8,7 +8,7 @@ public class MockDatabase : IDatabase
         Console.WriteLine("Population Database");
     }
 
-    public void Send(Session session)
+    public void Send()
     {
         Console.WriteLine("Sending data to database");
     }

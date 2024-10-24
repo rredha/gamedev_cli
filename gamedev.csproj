@@ -25,6 +25,10 @@
       <Compile Remove="src\Actions\RegisterCommand.cs" />
       <Compile Remove="src\User\Lib\**" />
       <Compile Remove="src\User\Physician.cs" />
+      <Compile Remove="src\ApplicationState\AppStateContext.cs" />
+      <Compile Remove="src\ApplicationState\AppStateMachine.cs" />
+      <Compile Remove="src\ApplicationState\Stages\InGameState.cs" />
+      <Compile Remove="src\Actions\UserRegistration\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -33,6 +37,7 @@
       <EmbeddedResource Remove="gamedev-cli.test\**" />
       <EmbeddedResource Remove="src\games\**" />
       <EmbeddedResource Remove="src\User\Lib\**" />
+      <EmbeddedResource Remove="src\Actions\UserRegistration\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -41,11 +46,16 @@
       <None Remove="gamedev-cli.test\**" />
       <None Remove="src\games\**" />
       <None Remove="src\User\Lib\**" />
+      <None Remove="src\Actions\UserRegistration\**" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Cli.NET" Version="2.2.0-alpha" />
       <PackageReference Include="CsvHelper" Version="33.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="src\Actions\" />
     </ItemGroup>
 
 </Project>

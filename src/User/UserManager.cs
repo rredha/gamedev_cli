@@ -1,10 +1,10 @@
 namespace gamedev.User;
 
-public static class UserManager
+public class UserManager
 {
-    public static Common? CurrentUser { get; private set; }
+    public Common CurrentUser { get;  set; }
 
-    public static Common CreateUser(string userType)
+    public Common CreateUser(string userType)
     {
         switch (userType)
         {

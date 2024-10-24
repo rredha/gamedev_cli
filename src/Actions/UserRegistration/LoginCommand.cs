@@ -4,12 +4,8 @@ using gamedev.lib.Mock;
 namespace gamedev.Actions.UserRegistration;
 public class LoginCommand : ICommand
 {
-    private Scene Scene { get; set; }
+    public Scene Scene { get; set; }
     public string? LastName { get; set; }
-    public LoginCommand(Scene scene)
-    {
-        Scene = scene;
-    }
 
     public void Execute(string[] arguments)
     {

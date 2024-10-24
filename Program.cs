@@ -1,5 +1,10 @@
-﻿using gamedev.Actions.UserRegistration;
+﻿using Cli.NET.Interfaces.Actions;
 using Cli.NET.Models;
+using gamedev;
+using gamedev.ApplicationState;
+using gamedev.ApplicationState.Stages;
+using gamedev.ApplicationState.Stages.UserRegistration;
+using gamedev.Database;
 using gamedev.lib.Mock;
 using gamedev.User;
 using gamedev.Survey;
@@ -11,27 +16,16 @@ scene.DisplayText("Welcome to The Rehabilitation Software",
                   ConsoleColor.DarkBlue);
 #endregion
 
-#region State Machine
+#region Session Creation
 
-
-
-#endregion
-#region User Registration
-/*
-var userRegistrationCommands = new CommandList
-{
-    { "Signin", new SigninCommand(scene) },
-    { "Login", new LoginCommand(scene) }
-};
-
-scene.Options(userRegistrationCommands);
-scene.Container.Register(userRegistrationCommands);
-scene.WaitForUserCommand();
-scene.DisplayText(UserManager.CurrentUser.PersonalData.ToString(), ConsoleColor.Black);
-*/
+Session session = new Session();
+session.Id = 0;
+session.Database = new MockDatabase();
+session.AppState = new UserRegistrationState(scene, session);
 #endregion
 
 #region Integrated Survey System
+
 /*
 Processor processor = new Processor();
 processor.Retrieve();

@@ -1,3 +1,5 @@
+using Cli.NET.Interfaces.Actions;
+using gamedev.ApplicationState;
 using gamedev.User;
 using gamedev.Database;
 
@@ -5,33 +7,10 @@ namespace gamedev;
 
 public class Session
 {
-   public int Id { get; private set; }
-   public IDatabase? Database { get; private set; }
-   public Common User { get; private set; }
+   public  int Id { get; set; } = 0;
+   public  IDatabase? Database { get; set; }
+   public  AppState AppState { get; set; }
+   
+   public UserManager UserManager { get; set; }
 
-   public Session(int id, IDatabase? database, Common user)
-   {
-      Id = id;
-      Database = database;
-      User = user;
-   }
-
-   /*
-   public void StoreSessionToDatabase(Session session, IDatabase database)
-   {
-       Database = database;
-       Database.Send(this);
-   }
-   public void LoadSessionFromDatabase(IDatabase database)
-   {
-       Database = database;
-       Database.Retrieve();
-       IncrementSessionId(this);
-   }
-
-   private void IncrementSessionId(Session session)
-   {
-       session.Id++;
-   }
-   */
 }

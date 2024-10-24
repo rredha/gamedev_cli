@@ -1,11 +1,10 @@
-using gamedev;
+using Cli.NET.Interfaces.Actions;
 
+namespace gamedev.ApplicationState;
 
-public abstract class AppState 
+public abstract class AppState
 {
-    protected Session _sessionCtx;
-    protected AppState(Session session) 
-    {
-         _sessionCtx = session;
-    }
+    public ICommand Command { get; protected set; }
+
+    public abstract void NextState();
 }
