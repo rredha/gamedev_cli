@@ -29,6 +29,7 @@
       <Compile Remove="src\ApplicationState\AppStateMachine.cs" />
       <Compile Remove="src\ApplicationState\Stages\InGameState.cs" />
       <Compile Remove="src\Actions\UserRegistration\**" />
+      <Compile Remove="lib\State Machine\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -38,6 +39,7 @@
       <EmbeddedResource Remove="src\games\**" />
       <EmbeddedResource Remove="src\User\Lib\**" />
       <EmbeddedResource Remove="src\Actions\UserRegistration\**" />
+      <EmbeddedResource Remove="lib\State Machine\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -47,6 +49,7 @@
       <None Remove="src\games\**" />
       <None Remove="src\User\Lib\**" />
       <None Remove="src\Actions\UserRegistration\**" />
+      <None Remove="lib\State Machine\**" />
     </ItemGroup>
 
     <ItemGroup>

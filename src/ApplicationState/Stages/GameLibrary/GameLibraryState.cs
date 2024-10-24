@@ -1,6 +1,8 @@
+using gamedev.ApplicationState.Stages.External;
+using gamedev.ApplicationState.Stages.UserRegistration;
 using gamedev.lib.Mock;
 
-namespace gamedev.ApplicationState.Stages.UserRegistration;
+namespace gamedev.ApplicationState.Stages.GameLibrary;
 
 public class GameLibraryState : AppState
 {

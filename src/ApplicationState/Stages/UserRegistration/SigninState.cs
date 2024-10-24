@@ -1,19 +1,24 @@
 using Cli.NET.Interfaces.Actions;
 using gamedev.lib.Mock;
-using gamedev.User;
-using gamedev.User.Data.Type;
 
 namespace gamedev.ApplicationState.Stages.UserRegistration;
 
 public class SigninState : AppState, ICommand
 {
-    private Scene Scene { get; set; }
-    private Session Session { get; set; }
+    public Scene Scene { get; set; }
+    public Session Session { get; set; }
 
     public SigninState(Scene scene, Session session)
     {
         Scene = scene;
         Session = session;
+        Session.AppState = this;
+    }
+    public void Execute(string[] arguments)
+    {
+        Scene.DisplayText($"{GetType()}", ConsoleColor.White);
+        NextState();
+
     }
 
     public string? FirstName { get; private set; }
@@ -26,7 +31,15 @@ public class SigninState : AppState, ICommand
         Session.AppState = new LoginState(Scene, Session);
     }
 
-    public void Execute(string[] arguments)
+
+    private void PrintSigninInfo()
+    {
+        Scene.DisplayText($"{LastName} {FirstName}, aged {Age}, is a {UserType}",
+                            ConsoleColor.DarkGreen);
+
+    }
+
+    private void UserDataRegistration()
     {
         /*
         Scene.DisplayText("First Name : ", ConsoleColor.Blue);
@@ -63,14 +76,5 @@ public class SigninState : AppState, ICommand
         Session.UserManager.CreateUser(UserType);
         //user.PersonalData = new Personal(FirstName, LastName, Age);
         */
-        Scene.DisplayText($"{GetType()}", ConsoleColor.White);
-        NextState();
-
-    }
-    private void PrintSigninInfo()
-    {
-        Scene.DisplayText($"{LastName} {FirstName}, aged {Age}, is a {UserType}",
-                            ConsoleColor.DarkGreen);
-
     }
 }

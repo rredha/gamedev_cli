@@ -1,10 +1,10 @@
 using gamedev.lib.Mock;
 
-namespace gamedev.ApplicationState.Stages.UserRegistration;
+namespace gamedev.ApplicationState.Stages.GameLibrary;
 
 public class MainState : AppState
 {
-    public Scene Scene { get; set; }
+    public Scene Scene { get;  set; }
     public Session Session { get; set; }
 
     public MainState(Scene scene, Session session)

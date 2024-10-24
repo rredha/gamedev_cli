@@ -1,5 +1,6 @@
 using Cli.NET.Interfaces.Actions;
 using CsvHelper.Configuration.Attributes;
+using gamedev.ApplicationState.Stages.GameLibrary;
 using gamedev.lib.Mock;
 
 namespace gamedev.ApplicationState.Stages.UserRegistration;
@@ -15,12 +16,17 @@ public class LoginState : AppState, ICommand
         Scene = scene;
         Session = session;
     }
+    public void Execute(string[] arguments)
+    {
+        Scene.DisplayText($"{GetType()}", ConsoleColor.White);
+        NextState();
+    }
     public override void NextState()
     {
         Session.AppState = new MainState(Scene, Session);
     }
 
-    public void Execute(string[] arguments)
+    private void UserDataValidation()
     {
         /*
        Console.Clear();
@@ -30,7 +36,6 @@ public class LoginState : AppState, ICommand
        _isLogged = true;
        Scene.DisplayText("Logged in Successfully", ConsoleColor.Yellow);
        */
-        Scene.DisplayText($"{GetType()}", ConsoleColor.White);
-        NextState();
     }
+
 }
